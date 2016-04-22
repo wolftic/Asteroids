@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyShooting : MonoBehaviour {
+public class EnemyShooting : MonoBehaviour 
+{
 
 	public Bullet projectile;
 	public Transform muzzle;
