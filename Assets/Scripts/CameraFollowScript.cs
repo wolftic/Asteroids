@@ -11,6 +11,9 @@ public class CameraFollowScript : MonoBehaviour {
 	}
 
 	void Update () {
-		transform.position = Vector3.Lerp (transform.position, player.position + offset, 5f * Time.deltaTime);
+		if(player)
+		{
+			transform.position = Vector3.Lerp (transform.position, player.position + offset, 5f * Time.deltaTime);
+		}
 	}
 }

@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour {
 	public float Speed, Damage;
+	public Transform shooter;
 
 	Rigidbody rigidbody;
 
@@ -19,6 +20,9 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
+		if (other.transform == shooter)
+			return;
+		
 		if (other.transform.tag == "Player") {
 			other.transform.GetComponent<PlayerHealth> ().doDamage (Damage);
 			Debug.Log ("HIT");
