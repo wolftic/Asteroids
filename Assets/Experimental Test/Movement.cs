@@ -2,10 +2,12 @@
 using System.Collections;
 
 public class Movement : MonoBehaviour {
-	public float xSpeed;
+	public float maxSpeed = 30.0f;
+	float xSpeed;
 
 	Vector3 movement;
 	public ParticleSystem[] thrusters;
+	public Transform target;
 
 	void Start () {
 		
@@ -14,7 +16,6 @@ public class Movement : MonoBehaviour {
 	Quaternion newRot;
 
 	void Update () {
-
 		if(Input.GetAxisRaw("Vertical") != 0) {
 			for (int i = 0; i < thrusters.Length; i++) {
 				if (!thrusters [i].isPlaying && Input.GetAxisRaw("Vertical") > 0) {
@@ -22,7 +23,7 @@ public class Movement : MonoBehaviour {
 				}
 			}
 			xSpeed += Input.GetAxis ("Vertical");
-			xSpeed = Mathf.Clamp (xSpeed, 0f, 10f);
+			xSpeed = Mathf.Clamp (xSpeed, 0f, maxSpeed);
 		} else {
 			for (int i = 0; i < thrusters.Length; i++) {
 				if (thrusters [i].isPlaying) {
