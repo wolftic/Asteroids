@@ -30,7 +30,7 @@ public class PlayerShooting : MonoBehaviour {
 	private void Shoot ()
 	{
 		Bullet bullet = Instantiate (projectile, muzzle.position, muzzle.rotation) as Bullet;
-		bullets - 1;
+		bullets -= 1;
 		nextFire = nextFire + fireRate;
 	}
 
