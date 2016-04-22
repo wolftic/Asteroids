@@ -4,15 +4,16 @@ using System.Collections;
 public class EnemyHealth : MonoBehaviour {
 	public float Health;
 
-	void Start () {
-	
-	}
-
-	void Update () {
-	
-	}
 
 	public void doDamage(float damage) {
 		Health -= damage;
+	}
+
+	void Update()
+	{
+		if(Health <= 0)
+		{
+			Destroy (gameObject);
+		}
 	}
 }

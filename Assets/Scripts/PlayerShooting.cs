@@ -7,7 +7,7 @@ public class PlayerShooting : MonoBehaviour {
 	public Transform muzzle;
 	public float shootDelay;
 	public float bulletSpeed;
-	public float fireRate = 0.8F;
+	public float fireRate = 0.4F;
 	public AudioClip shotSound1;
 	public AudioClip shotSound2;
 
@@ -31,13 +31,13 @@ public class PlayerShooting : MonoBehaviour {
 	{
 		Bullet bullet = Instantiate (projectile, muzzle.position, muzzle.rotation) as Bullet;
 		bullets -= 1;
-		nextFire = nextFire + fireRate;
+		nextFire = Time.time + fireRate;
 	}
 
 	private void Reload()
 	{
 		bullets = 10;
-		nextFire = nextFire + reloadTime;
+		nextFire = Time.time + reloadTime;
 	}
 
 }

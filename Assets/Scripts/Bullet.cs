@@ -22,13 +22,15 @@ public class Bullet : MonoBehaviour {
 		if (other.transform.tag == "Player") {
 			other.transform.GetComponent<PlayerHealth> ().doDamage (Damage);
 			Debug.Log ("HIT");
+			Destroy (gameObject);
 		}
 
 		if (other.transform.tag == "Enemy") {
 			other.transform.GetComponent<EnemyHealth> ().doDamage (Damage);
 			Debug.Log ("HIT");
+			Destroy (gameObject);
 		}
 
-		Destroy (gameObject);
+
 	}
 }

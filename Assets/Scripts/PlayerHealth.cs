@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour {
+public class PlayerHealth : MonoBehaviour 
+{
 	public float Health;
 
-	void Start () {
-	
-	}
-
-	void Update () {
-	
-	}
-
-	public void doDamage(float damage) {
+	public void doDamage(float damage) 
+	{
 		Health -= damage;
+	}
+
+	void Update()
+	{
+		if(Health <= 0)
+		{
+			Destroy (gameObject);
+		}
 	}
 }
