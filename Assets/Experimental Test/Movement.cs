@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour {
 				}
 			}
 			xSpeed += Input.GetAxis ("Vertical");
-			xSpeed = Mathf.Clamp (xSpeed, -10f, 10f);
+			xSpeed = Mathf.Clamp (xSpeed, 0f, 10f);
 		} else {
 			for (int i = 0; i < thrusters.Length; i++) {
 				if (thrusters [i].isPlaying) {

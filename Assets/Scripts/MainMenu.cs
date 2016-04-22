@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneScript : MonoBehaviour {
+public class MainMenu : MonoBehaviour {
 
 	public Canvas startMenu;
 	public Canvas optionMenu;
@@ -35,9 +35,9 @@ public class SceneScript : MonoBehaviour {
 		planetMenu.enabled = false;
 	}
 
-	public void NewGame()
+	public void NewGame(string scene)
 	{
-		SceneManager.LoadScene ("scene");
+		SceneManager.LoadScene (scene);
 	}
 
 	public void OptionMenu()
