@@ -5,7 +5,7 @@ public class Comet : MonoBehaviour {
 	bool isSinking = false;
 
 	void Start () {
-		Invoke ("Sink", 1.0f);
+		Invoke ("Sink", 10.0f);
 	}
 
 	float percentage = 0;
@@ -15,7 +15,7 @@ public class Comet : MonoBehaviour {
 		if (isSinking) {
 			percentage += 0.1f * Time.deltaTime;
 			transform.localScale = Vector3.Lerp (transform.localScale, Vector3.zero, percentage);
-			if (percentage > 1) {
+			if (transform.localScale == Vector3.zero) {
 				Destroy (gameObject);
 			}
 		}
