@@ -59,6 +59,7 @@ GameObject:
   - 54: {fileID: 5425684}
   - 114: {fileID: 11400528}
   - 65: {fileID: 6551894}
+  - 114: {fileID: 11455340}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -364,6 +365,18 @@ MonoBehaviour:
   maxSpeed: 30
   RANGE: 23
   inRange: 0
+--- !u!114 &11455340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf6ba1eec4a58d4994538dfd3898de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
 --- !u!198 &19808032
 ParticleSystem:
   m_ObjectHideFlags: 1
