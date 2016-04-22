@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour {
 
 		if(Input.GetAxisRaw("Vertical") != 0) {
 			for (int i = 0; i < thrusters.Length; i++) {
-				if (!thrusters [i].isPlaying) {
+				if (!thrusters [i].isPlaying && Input.GetAxisRaw("Vertical") > 0) {
 					thrusters [i].Play ();
 				}
 			}
