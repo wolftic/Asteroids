@@ -11,7 +11,7 @@ public class Comet : MonoBehaviour {
 	float percentage = 0;
 
 	void Update () {
-		transform.Translate (Vector3.forward * Time.deltaTime);
+		transform.Translate (Vector3.forward * 10.0f * Time.deltaTime);
 		if (isSinking) {
 			percentage += 0.1f * Time.deltaTime;
 			transform.localScale = Vector3.Lerp (transform.localScale, Vector3.zero, percentage);
@@ -23,5 +23,14 @@ public class Comet : MonoBehaviour {
 
 	void Sink () {
 		isSinking = true;
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.tag == "Player") {
+			other.GetComponent<PlayerHealth> ().doDamage (10f);
+		}
+		if (other.tag == "Enemy") {
+			other.GetComponent<EnemyHealth> ().doDamage (10f);
+		}
 	}
 }
