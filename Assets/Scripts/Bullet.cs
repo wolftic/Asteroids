@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour {
 		transform.Translate (Vector3.forward * Speed * Time.deltaTime);
 	}
 
-	void OnTriggerEnter(Collision other) {
+	void OnTriggerEnter(Collider other) {
 		if (other.transform.tag == "Player") {
 			other.transform.GetComponent<PlayerHealth> ().doDamage (Damage);
 			Debug.Log ("HIT");
