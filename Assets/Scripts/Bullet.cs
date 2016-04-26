@@ -37,12 +37,8 @@ public class Bullet : MonoBehaviour {
 		}
 		if(other.transform.tag == "Comet")
 		{
-			Destroy (other.gameObject);
 			Destroy (gameObject);
 			other.gameObject.GetComponent <Comet> ().split();
-
 		}
-
-
 	}
 }
