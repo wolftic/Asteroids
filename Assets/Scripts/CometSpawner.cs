@@ -14,7 +14,6 @@ public class CometSpawner : MonoBehaviour {
 	void Update () {
 		if (spawnTime < Time.time) {
 			spawnTime = Time.time + spawnDelay;
-			//
 
 			Vector3 random = Random.insideUnitSphere;
 			random.y = 0;
