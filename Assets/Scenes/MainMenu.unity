@@ -2403,6 +2403,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1652111975}
+        m_MethodName: QuitShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 728901321}
         m_MethodName: ExitOptions
         m_Mode: 1
@@ -5675,6 +5686,8 @@ MonoBehaviour:
   creditsMenu: {fileID: 349270114}
   planetMenu: {fileID: 1731120141}
   shopMenu: {fileID: 1652111973}
+  buyMenu: {fileID: 0}
+  sellMenu: {fileID: 0}
 --- !u!1 &735024191
 GameObject:
   m_ObjectHideFlags: 0
@@ -10554,6 +10567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buyMenu: {fileID: 1391064600}
   sellMenu: {fileID: 216903394}
+  playerInventory: {fileID: 11450182, guid: 00cd6896b8e4a61499f9edfa6883a737, type: 2}
 --- !u!1 &1656372001
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour {
 	public Canvas creditsMenu;
 	public Canvas planetMenu;
 	public Canvas shopMenu;
+	public Canvas buyMenu;
+	public Canvas sellMenu;
 
 	void Awake()
 	{
