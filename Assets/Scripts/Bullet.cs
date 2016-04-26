@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour {
 
 	Rigidbody rigidbody;
 
+
 	void Start () {
 		rigidbody = GetComponent<Rigidbody> ();
 		rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
@@ -33,6 +34,13 @@ public class Bullet : MonoBehaviour {
 			other.transform.GetComponent<EnemyHealth> ().doDamage (Damage);
 			Debug.Log ("HIT");
 			Destroy (gameObject);
+		}
+		if(other.transform.tag == "Comet")
+		{
+			Destroy (other.gameObject);
+			Destroy (gameObject);
+			other.gameObject.GetComponent <Comet> ().split();
+
 		}
 
 

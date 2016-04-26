@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
 
 	void Update()
 	{
-		if(Time.time > regenTime)
+		if(Time.time > regenTime && Health < 100)
 		{
 			Regeneration ();
 		}
