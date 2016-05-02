@@ -5,10 +5,25 @@ using System.Collections.Generic;
 public class PlayerInventory : MonoBehaviour {
 
 	public Dictionary<string, int> inventory = new Dictionary<string, int>();
+	public float coins = 0;
 
 	void Start()
 	{
 		DontDestroyOnLoad (gameObject);
+		Invoke ("CoinsDebug", 1f);
+	}
+
+	void Update()
+	{
+		
+	}
+
+	void CoinsDebug()
+	{
+		
+		Debug.Log (coins);
+		coins += 1;
+		Invoke ("CoinsDebug", 1f);
 	}
 
 	void addItem(string name) {
