@@ -15,23 +15,28 @@ public class BuyScript : MonoBehaviour {
 
 	public void BuySSEngalica()
 	{
-		if(playerInventory.DeductCoins (20))
+		if(playerInventory.InInventory (ItemType.SSEngalica) == false)
 		{
-			playerInventory.addItem (ItemType.SSEngalica);
-			Debug.Log ("Bought it");
+			if(playerInventory.DeductCoins (20))
+			{
+				playerInventory.AddItem (ItemType.SSEngalica);
+				Debug.Log ("Bought SSEngalica");
+			}
+			else
+			{
+				Debug.Log ("Get More moneyz");
+			}
 		}
 		else
-		{
-			Debug.Log ("Get More moneyz");
-		}
+			Debug.Log ("Already got it!");
 	}
 
 	public void BuySCStriker()
 	{
-		if(playerInventory.DeductCoins (20))
-		{
-			playerInventory.addItem (ItemType.SCStriker);
-		}
+		if (playerInventory.DeductCoins (20)) {
+			playerInventory.AddItem (ItemType.SCStriker);
+		} else
+			Debug.Log ("Get More Moneyz");
 	}
 
 	public void BuyGun1()

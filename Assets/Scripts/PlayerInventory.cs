@@ -7,6 +7,7 @@ public class PlayerInventory : MonoBehaviour {
 	public enum ItemType { SSEngalica, SCStriker, Gun1, AmmoGun1, Gun2, AmmoGun2, SpeedUpgrade, HealthUpgrade, FirePowerUpgrade, EnemyScrap, CometScrap};
 	public Dictionary<ItemType, int> inventory = new Dictionary<ItemType, int>();
 
+	[HideInInspector]
 	public int coins = 0;
 
 	void Start()
@@ -30,11 +31,21 @@ public class PlayerInventory : MonoBehaviour {
 		} else return false;
 	}
 
-	public void addItem(ItemType name) {
-		addItem (name, 1);
+	public bool InInventory(ItemType name)
+	{
+		if(inventory.ContainsKey (name) )
+		{
+			if (inventory[name] > 0)
+				return true;
+		}
+		return false;
 	}
 
-	void addItem(ItemType name, int quantity) {
+	public void AddItem(ItemType name) {
+		AddItem (name, 1);
+	}
+
+	void AddItem(ItemType name, int quantity) {
 		if(inventory.ContainsKey (name) ) {
 			inventory [name] += quantity;
 		} else {
@@ -42,11 +53,11 @@ public class PlayerInventory : MonoBehaviour {
 		}
 	}
 
-	void removeItem(ItemType name) {
-		removeItem (name, 1);
+	void RemoveItem(ItemType name) {
+		RemoveItem (name, 1);
 	}
 
-	void removeItem(ItemType name, int quantity) {
+	void RemoveItem(ItemType name, int quantity) {
 		if(inventory.ContainsKey (name) ) {
 			inventory [name] -= quantity;
 			if (inventory[name] <= 0) {
