@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour {
 
-	public Dictionary<string, int> inventory = new Dictionary<string, int>();
-	public float coins = 0;
+	public enum ItemType { SSEngalica, SCStriker, Gun1, AmmoGun1, Gun2, AmmoGun2, SpeedUpgrade, HealthUpgrade, FirePowerUpgrade, EnemyScrap, CometScrap};
+	public Dictionary<ItemType, int> inventory = new Dictionary<ItemType, int>();
+
+	public int coins = 0;
 
 	void Start()
 	{
@@ -13,24 +15,26 @@ public class PlayerInventory : MonoBehaviour {
 		Invoke ("CoinsDebug", 1f);
 	}
 
-	void Update()
-	{
-		
-	}
-
 	void CoinsDebug()
 	{
 		
 		Debug.Log (coins);
 		coins += 1;
-		Invoke ("CoinsDebug", 1f);
+		Invoke ("CoinsDebug", 0.5f);
 	}
 
-	void addItem(string name) {
+	public bool DeductCoins(int amount) {
+		if (this.coins >= amount) {
+			coins -= amount;
+			return true;
+		} else return false;
+	}
+
+	public void addItem(ItemType name) {
 		addItem (name, 1);
 	}
 
-	void addItem(string name, int quantity) {
+	void addItem(ItemType name, int quantity) {
 		if(inventory.ContainsKey (name) ) {
 			inventory [name] += quantity;
 		} else {
@@ -38,11 +42,11 @@ public class PlayerInventory : MonoBehaviour {
 		}
 	}
 
-	void removeItem(string name) {
+	void removeItem(ItemType name) {
 		removeItem (name, 1);
 	}
 
-	void removeItem(string name, int quantity) {
+	void removeItem(ItemType name, int quantity) {
 		if(inventory.ContainsKey (name) ) {
 			inventory [name] -= quantity;
 			if (inventory[name] <= 0) {

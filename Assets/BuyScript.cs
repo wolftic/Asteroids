@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using ItemType = PlayerInventory.ItemType;
 
 public class BuyScript : MonoBehaviour {
 
@@ -14,17 +15,22 @@ public class BuyScript : MonoBehaviour {
 
 	public void BuySSEngalica()
 	{
-		if(true)
+		if(playerInventory.DeductCoins (20))
 		{
-
+			playerInventory.addItem (ItemType.SSEngalica);
+			Debug.Log ("Bought it");
+		}
+		else
+		{
+			Debug.Log ("Get More moneyz");
 		}
 	}
 
 	public void BuySCStriker()
 	{
-		if(true)
+		if(playerInventory.DeductCoins (20))
 		{
-
+			playerInventory.addItem (ItemType.SCStriker);
 		}
 	}
 
@@ -38,7 +44,7 @@ public class BuyScript : MonoBehaviour {
 
 	public void BuyAmmoGun1()
 	{
-		if(true)
+		if(playerInventory.coins >= 10)
 		{
 
 		}
@@ -88,7 +94,7 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellAmmoGun1()
 	{
-		if(playerInventory.coins >= 10)
+		if(true)
 		{
 			
 		}
