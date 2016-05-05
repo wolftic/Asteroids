@@ -33,66 +33,121 @@ public class BuyScript : MonoBehaviour {
 
 	public void BuySCStriker()
 	{
-		if (playerInventory.DeductCoins (20)) {
-			playerInventory.AddItem (ItemType.SCStriker);
-		} else
-			Debug.Log ("Get More Moneyz");
+		if (playerInventory.InInventory (ItemType.SCStriker) == false)
+			if (playerInventory.DeductCoins (20)) {
+				playerInventory.AddItem (ItemType.SCStriker);
+			} else
+				Debug.Log ("Get More Moneyz");
+			else
+				Debug.Log ("Already got it");
 	}
 
 	public void BuyGun1()
 	{
-		if(true)
+		if(playerInventory.InInventory (ItemType.Gun1) == false)
 		{
-
+			if(playerInventory.DeductCoins (20))
+			{
+				playerInventory.AddItem (ItemType.Gun1);
+				Debug.Log ("Bought Gun1");
+			}
+			else
+			{
+				Debug.Log ("Get More moneyz");
+			}
 		}
+		else
+			Debug.Log ("Already got it!");
 	}
 
 	public void BuyAmmoGun1()
 	{
-		if(playerInventory.coins >= 10)
-		{
-
-		}
+		if (playerInventory.DeductCoins (10)) {
+			playerInventory.AddItem (ItemType.AmmoGun1);
+			Debug.Log ("bought ammo");
+		} else
+			Debug.Log ("get more money");
 	}
 
 	public void BuyGun2()
 	{
-		if(true)
+		if(playerInventory.InInventory (ItemType.Gun2) == false)
 		{
-
+			if(playerInventory.DeductCoins (20))
+			{
+				playerInventory.AddItem (ItemType.Gun2);
+				Debug.Log ("Bought Gun2");
+			}
+			else
+			{
+				Debug.Log ("Get More moneyz");
+			}
 		}
+		else
+			Debug.Log ("Already got it!");
 	}
 
 	public void BuyAmmoGun2()
 	{
-		if(true)
-		{
-
+		if (playerInventory.DeductCoins (10)) {
+			playerInventory.AddItem (ItemType.AmmoGun2);
+			Debug.Log ("bought ammo");
+		} else
+			Debug.Log ("get more money");
 		}
-	}
 
 	public void BuyUpgradeSpeed()
 	{
-		if(true)
+		if(playerInventory.InInventory (ItemType.SpeedUpgrade) == false)
 		{
-
+			if(playerInventory.DeductCoins (20))
+			{
+				playerInventory.AddItem (ItemType.SpeedUpgrade);
+				Debug.Log ("Bought speed upgrade");
+			}
+			else
+			{
+				Debug.Log ("Get More moneyz");
+			}
 		}
+		else
+			Debug.Log ("Already got it!");
 	}
 
 	public void BuyUpgradeHealth()
 	{
-		if(true)
+		if(playerInventory.InInventory (ItemType.HealthUpgrade) == false)
 		{
-
+			if(playerInventory.DeductCoins (20))
+			{
+				playerInventory.AddItem (ItemType.HealthUpgrade);
+				Debug.Log ("Bought health upgrade");
+			}
+			else
+			{
+				Debug.Log ("Get More moneyz");
+			}
 		}
+		else
+			Debug.Log ("Already got it!");
 	}
 
 	public void BuyUpgradeFirepower()
 	{
-		if(true)
+		if(playerInventory.InInventory (ItemType.FirePowerUpgrade) == false)
 		{
-
+			if(playerInventory.DeductCoins (20))
+			{
+				playerInventory.AddItem (ItemType.FirePowerUpgrade);
+				Debug.Log ("Bought firepower upgrade");
+			}
+			else
+			{
+				Debug.Log ("Get More moneyz");
+			}
 		}
+		else
+			Debug.Log ("Already got it!");
 	}
 
 	//sell functions
