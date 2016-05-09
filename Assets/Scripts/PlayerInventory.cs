@@ -32,6 +32,13 @@ public class PlayerInventory : MonoBehaviour {
 		} else return false;
 	}
 
+	public bool DeductItem(ItemType name) {
+		if (InInventory (name)) {
+			RemoveItem (name);
+			return true;
+		} else return false;
+	}
+
 	public bool InInventory(ItemType name)
 	{
 		if(inventory.ContainsKey (name) )

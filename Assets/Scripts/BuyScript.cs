@@ -13,21 +13,30 @@ public class BuyScript : MonoBehaviour {
 
 	//buy functions
 
+	//koop functie aanmaken
 	public void BuySSEngalica()
 	{
+		//als item niet in inventory zit kan jij code uitvoeren
 		if(playerInventory.InInventory (ItemType.SSEngalica) == false)
 		{
+			//als jij zoveel coins heeft kan jij code uitvoeren
 			if(playerInventory.DeductCoins (20))
 			{
+				//Item in inventory toevoegen
 				playerInventory.AddItem (ItemType.SSEngalica);
+				//aangeven dat speler item gekocht heeft.
 				Debug.Log ("Bought SSEngalica");
 			}
+			//als speler te weinig geld heeft
 			else
 			{
+				//aangeven dat speler te weinig geld heeft.
 				Debug.Log ("Get More moneyz");
 			}
 		}
+		//als je item al hebt.
 		else
+			//aangeven dat speler het item al heeft.
 			Debug.Log ("Already got it!");
 	}
 
@@ -96,21 +105,30 @@ public class BuyScript : MonoBehaviour {
 			Debug.Log ("get more money");
 		}
 
+	//koop upgrade functie aanmaken
 	public void BuyUpgradeSpeed()
 	{
+		//als speler nog geen upgrade heeft gekocht voer code uit
 		if(playerInventory.InInventory (ItemType.SpeedUpgrade) == false)
 		{
+			//test of de speler genoeg coins heb en haal het geld weg, voer daarna code uit
 			if(playerInventory.DeductCoins (20))
 			{
+				//add upgrade aan inventory
 				playerInventory.AddItem (ItemType.SpeedUpgrade);
+				//aangeven dat de speler upgrade gekocht heeft
 				Debug.Log ("Bought speed upgrade");
 			}
+			//als speler te weinig geld heeft voer code uit
 			else
 			{
+				//aangeven dat speler te weinig geld heeft
 				Debug.Log ("Get More moneyz");
 			}
 		}
+		//als speler upgrade al heeft
 		else
+			//aangeven dat speler upgrade al heeft
 			Debug.Log ("Already got it!");
 	}
 
@@ -152,21 +170,24 @@ public class BuyScript : MonoBehaviour {
 
 	//sell functions
 
+	//verkoop functie aanmaken
 	public void SellAmmoGun1()
 	{
-		if(playerInventory.InInventory (ItemType.AmmoGun1))
-		{
-			playerInventory.RemoveItem (ItemType.AmmoGun1);
+		//test of item in inventory zit en haal item weg, voer daarna de code uit
+		if (playerInventory.DeductItem (ItemType.AmmoGun1)) {
+			//geef coins aan speler
 			playerInventory.coins += 10;
+			//aangeven dat item verkocht is
 			Debug.Log ("sold ammo");
-		}
+		} else
+			//aangeven dat speler het item niet heeft
+			Debug.Log ("Niks om te verkopen");
 	}
 
 	public void SellAmmoGun2()
 	{
-		if(playerInventory.InInventory (ItemType.AmmoGun2))
+		if(playerInventory.DeductItem (ItemType.AmmoGun2))
 		{
-			playerInventory.RemoveItem (ItemType.AmmoGun2);
 			playerInventory.coins += 10;
 			Debug.Log ("sold ammo");
 		}
@@ -174,9 +195,8 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellEnemyScrap()
 	{
-		if(playerInventory.InInventory (ItemType.EnemyScrap))
+		if(playerInventory.DeductItem (ItemType.EnemyScrap))
 		{
-			playerInventory.RemoveItem (ItemType.EnemyScrap);
 			playerInventory.coins += 10;
 			Debug.Log ("sold enemy scrap");
 		}
@@ -184,9 +204,8 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellCometScrap()
 	{
-		if(playerInventory.InInventory (ItemType.CometScrap))
+		if(playerInventory.DeductItem (ItemType.CometScrap))
 		{
-			playerInventory.RemoveItem (ItemType.CometScrap);
 			playerInventory.coins += 10;
 			Debug.Log ("sold Comet scrap");
 		}
@@ -194,9 +213,8 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellStars()
 	{
-		if(playerInventory.InInventory (ItemType.Stars))
+		if(playerInventory.DeductItem (ItemType.Stars))
 		{
-			playerInventory.RemoveItem (ItemType.Stars);
 			playerInventory.coins += 10;
 			Debug.Log ("sold stars");
 		}
@@ -204,9 +222,8 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellRustyPlates()
 	{
-		if(playerInventory.InInventory (ItemType.RustySteelPlates))
+		if(playerInventory.DeductItem (ItemType.RustySteelPlates))
 		{
-			playerInventory.RemoveItem (ItemType.RustySteelPlates);
 			playerInventory.coins += 10;
 			Debug.Log ("sold Rusty Steel Plates");
 		}
@@ -214,9 +231,8 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellGlass()
 	{
-		if(playerInventory.InInventory (ItemType.Glass))
+		if(playerInventory.DeductItem (ItemType.Glass))
 		{
-			playerInventory.RemoveItem (ItemType.Glass);
 			playerInventory.coins += 10;
 			Debug.Log ("sold Glass");
 		}
@@ -224,9 +240,8 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellMinerals()
 	{
-		if(playerInventory.InInventory (ItemType.Minerals))
+		if(playerInventory.DeductItem (ItemType.Minerals))
 		{
-			playerInventory.RemoveItem (ItemType.Minerals);
 			playerInventory.coins += 10;
 			Debug.Log ("sold Minerals");
 		}
@@ -234,9 +249,8 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellBrokenGuns()
 	{
-		if(playerInventory.InInventory (ItemType.BrokenGuns))
+		if(playerInventory.DeductItem (ItemType.BrokenGuns))
 		{
-			playerInventory.RemoveItem (ItemType.BrokenGuns);
 			playerInventory.coins += 10;
 			Debug.Log ("sold Broken Guns");
 		}
@@ -244,9 +258,8 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellBolts()
 	{
-		if(playerInventory.InInventory (ItemType.Bolts))
+		if(playerInventory.DeductItem (ItemType.Bolts))
 		{
-			playerInventory.RemoveItem (ItemType.Bolts);
 			playerInventory.coins += 10;
 			Debug.Log ("sold Bolts");
 		}
