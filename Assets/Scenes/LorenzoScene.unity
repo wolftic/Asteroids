@@ -128,7 +128,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0333ee77fc2230c4ebcbddd7442fab04, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -155,7 +155,7 @@ ParticleSystemRenderer:
   m_NormalDirection: 1
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -1845,7 +1845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1275869193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,7 +1960,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 455804, guid: ba5c6420b5c1d9d4aaddd776888c4986, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 24
+      value: -162
       objectReference: {fileID: 0}
     - target: {fileID: 455804, guid: ba5c6420b5c1d9d4aaddd776888c4986, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1968,7 +1968,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 455804, guid: ba5c6420b5c1d9d4aaddd776888c4986, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -26.4
+      value: -58.5
       objectReference: {fileID: 0}
     - target: {fileID: 455804, guid: ba5c6420b5c1d9d4aaddd776888c4986, type: 2}
       propertyPath: m_LocalRotation.x

@@ -36,13 +36,20 @@ public class EnemyMovement : MonoBehaviour {
 	float lastRotChange;
 
 	void Patrol() {
-		CheckIfPlayerIsVisible ();
-
+		CheckIfPlayerIsVisible ();	
 
 		if (lastRotChange < Time.time) {
 			lastRotChange = Time.time + 2.0f;
 			oldRot = newRot;
 			newRot = Quaternion.Euler(0, transform.rotation.y + Random.Range(-45, 45), 0);
+			if (transform.position.x > 100 || transform.position.x < -100 || transform.position.z > 100 || transform.position.z < -100) { //OUT OF BOUNDS
+				Vector3 _dir = (Vector3.one - transform.position).normalized;
+				Debug.Log (_dir);
+				Quaternion _rot = Quaternion.LookRotation (_dir / 2);
+
+				newRot = _rot;
+				Debug.Log (newRot);
+			}
 		}
 
 		float diff = transform.rotation.y - newRot.y;
@@ -67,6 +74,9 @@ public class EnemyMovement : MonoBehaviour {
 
 	void Chasing() {
 		CheckIfPlayerIsVisible ();
+		if (!target) {
+			return;
+		}
 
 		if (Vector3.Distance (transform.position, target.position) < RANGE) {
 			inRange = true;
@@ -120,7 +130,6 @@ public class EnemyMovement : MonoBehaviour {
 
 			distance = newDistance;
 			id = i;
-			Debug.Log (distance);
 		}
 
 		if (distance <= SEERANGE && distance != 0) {
