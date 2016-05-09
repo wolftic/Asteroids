@@ -212,4 +212,43 @@ public class BuyScript : MonoBehaviour {
 		}
 	}
 
+	public void SellGlass()
+	{
+		if(playerInventory.InInventory (ItemType.Glass))
+		{
+			playerInventory.RemoveItem (ItemType.Glass);
+			playerInventory.coins += 10;
+			Debug.Log ("sold Glass");
+		}
+	}
+
+	public void SellMinerals()
+	{
+		if(playerInventory.InInventory (ItemType.Minerals))
+		{
+			playerInventory.RemoveItem (ItemType.Minerals);
+			playerInventory.coins += 10;
+			Debug.Log ("sold Minerals");
+		}
+	}
+
+	public void SellBrokenGuns()
+	{
+		if(playerInventory.InInventory (ItemType.BrokenGuns))
+		{
+			playerInventory.RemoveItem (ItemType.BrokenGuns);
+			playerInventory.coins += 10;
+			Debug.Log ("sold Broken Guns");
+		}
+	}
+
+	public void SellBolts()
+	{
+		if(playerInventory.InInventory (ItemType.Bolts))
+		{
+			playerInventory.RemoveItem (ItemType.Bolts);
+			playerInventory.coins += 10;
+			Debug.Log ("sold Bolts");
+		}
+	}
 }
