@@ -154,33 +154,61 @@ public class BuyScript : MonoBehaviour {
 
 	public void SellAmmoGun1()
 	{
-		if(true)
+		if(playerInventory.InInventory (ItemType.AmmoGun1))
 		{
-			
+			playerInventory.RemoveItem (ItemType.AmmoGun1);
+			playerInventory.coins += 10;
+			Debug.Log ("sold ammo");
 		}
 	}
 
 	public void SellAmmoGun2()
 	{
-		if(true)
+		if(playerInventory.InInventory (ItemType.AmmoGun2))
 		{
-
+			playerInventory.RemoveItem (ItemType.AmmoGun2);
+			playerInventory.coins += 10;
+			Debug.Log ("sold ammo");
 		}
 	}
 
 	public void SellEnemyScrap()
 	{
-		if(true)
+		if(playerInventory.InInventory (ItemType.EnemyScrap))
 		{
-
+			playerInventory.RemoveItem (ItemType.EnemyScrap);
+			playerInventory.coins += 10;
+			Debug.Log ("sold enemy scrap");
 		}
 	}
 
 	public void SellCometScrap()
 	{
-		if(true)
+		if(playerInventory.InInventory (ItemType.CometScrap))
 		{
+			playerInventory.RemoveItem (ItemType.CometScrap);
+			playerInventory.coins += 10;
+			Debug.Log ("sold Comet scrap");
+		}
+	}
 
+	public void SellStars()
+	{
+		if(playerInventory.InInventory (ItemType.Stars))
+		{
+			playerInventory.RemoveItem (ItemType.Stars);
+			playerInventory.coins += 10;
+			Debug.Log ("sold stars");
+		}
+	}
+
+	public void SellRustyPlates()
+	{
+		if(playerInventory.InInventory (ItemType.RustySteelPlates))
+		{
+			playerInventory.RemoveItem (ItemType.RustySteelPlates);
+			playerInventory.coins += 10;
+			Debug.Log ("sold Rusty Steel Plates");
 		}
 	}
 

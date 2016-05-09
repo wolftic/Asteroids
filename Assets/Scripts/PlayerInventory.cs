@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour {
 
-	public enum ItemType { SSEngalica, SCStriker, Gun1, AmmoGun1, Gun2, AmmoGun2, SpeedUpgrade, HealthUpgrade, FirePowerUpgrade, EnemyScrap, CometScrap};
+	public enum ItemType { SSEngalica, SCStriker, Gun1, AmmoGun1, Gun2, AmmoGun2, SpeedUpgrade, HealthUpgrade, FirePowerUpgrade, EnemyScrap, CometScrap, BrokenGuns, Bolts, 
+		Minerals, Glass, RustySteelPlates, Stars};
 	public Dictionary<ItemType, int> inventory = new Dictionary<ItemType, int>();
 
 	[HideInInspector]
@@ -53,7 +54,7 @@ public class PlayerInventory : MonoBehaviour {
 		}
 	}
 
-	void RemoveItem(ItemType name) {
+	public void RemoveItem(ItemType name) {
 		RemoveItem (name, 1);
 	}
 
