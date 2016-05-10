@@ -5,10 +5,6 @@ using ItemType = PlayerInventory.ItemType;
 public class BuyScript : MonoBehaviour {
 
 	private PlayerInventory playerInventory;
-	[HideInInspector]
-	public int sellButton;
-	[SerializeField]
-	private int buyButton;
 
 	void Awake()
 	{
