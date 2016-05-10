@@ -8,6 +8,25 @@ TagManager:
   - Bullet
   - Enemy
   - Playerinventory
+  - Sellknop1
+  - Sellknop2
+  - Sellknop3
+  - Sellknop4
+  - Sellknop5
+  - Sellknop6
+  - Sellknop7
+  - Sellknop8
+  - Sellknop9
+  - Sellknop10
+  - Buyknop1
+  - Buyknop2
+  - Buyknop3
+  - Buyknop4
+  - Buyknop5
+  - Buyknop6
+  - Buyknop7
+  - Buyknop8
+  - Buyknop9
   layers:
   - Default
   - TransparentFX
