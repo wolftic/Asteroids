@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour {
 	public Transform target;
 
 	void Start () {
-		
 	}
 
 	Quaternion newRot;
