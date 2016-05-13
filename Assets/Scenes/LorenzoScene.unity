@@ -1830,6 +1830,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1525373452}
+  offset: {x: 0, y: 0, z: 0}
+  left: 0
+  right: 0
+  ySpeed: 0
 --- !u!1 &1275869192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +1849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1275869193
 MonoBehaviour:
   m_ObjectHideFlags: 0

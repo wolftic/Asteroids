@@ -13,6 +13,7 @@ public class Comet : MonoBehaviour {
 
 	void Update () {
 		transform.Translate (Vector3.forward * 10.0f * Time.deltaTime);
+		transform.GetChild (0).LookAt (Camera.main.transform.position);
 		if (time < Time.time) {
 			split ();
 		}
