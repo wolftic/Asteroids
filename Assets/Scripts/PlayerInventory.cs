@@ -27,7 +27,6 @@ public class PlayerInventory : MonoBehaviour {
 	//functie voor debuggen aanmaken
 	void CoinsDebug()
 	{
-		Debug.Log (coins);
 		//coins toevoegen
 		coins += 1;
 		//functie herhalen
