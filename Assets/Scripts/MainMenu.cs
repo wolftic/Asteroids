@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-	public Canvas startMenu;
-	public Canvas optionMenu;
-	public Canvas tutorialMenu;
-	public Canvas creditsMenu;
-	public Canvas planetMenu;
-	public Canvas shopMenu;
-	public Canvas buyMenu;
-	public Canvas sellMenu;
+	[SerializeField]private Canvas startMenu;
+	[SerializeField]private Canvas optionMenu;
+	[SerializeField]private Canvas tutorialMenu;
+	[SerializeField]private Canvas creditsMenu;
+	[SerializeField]private Canvas planetMenu;
+	[SerializeField]private Canvas shopMenu;
+	[SerializeField]private Canvas buyMenu;
+	[SerializeField]private Canvas sellMenu;
+	[SerializeField]private Canvas controlMenu; 
 
 	void Awake()
 	{
@@ -22,6 +23,7 @@ public class MainMenu : MonoBehaviour {
 		creditsMenu = creditsMenu.GetComponent <Canvas> ();
 		planetMenu = planetMenu.GetComponent <Canvas> ();
 		shopMenu = shopMenu.GetComponent <Canvas> ();
+		controlMenu = controlMenu.GetComponent <Canvas> ();
 
 		startMenu.enabled = true;
 		optionMenu.enabled = false;
@@ -29,6 +31,7 @@ public class MainMenu : MonoBehaviour {
 		creditsMenu.enabled = false;
 		planetMenu.enabled = false;
 		shopMenu.enabled = false;
+		controlMenu.enabled = false;
 	}
 
 	public void TutorialScherm()
@@ -39,6 +42,7 @@ public class MainMenu : MonoBehaviour {
 		creditsMenu.enabled = false;
 		planetMenu.enabled = false;
 		shopMenu.enabled = false;
+		controlMenu.enabled = false;
 	}
 
 	public void NewGame(string scene)
@@ -54,6 +58,7 @@ public class MainMenu : MonoBehaviour {
 		creditsMenu.enabled = false;
 		planetMenu.enabled = false;
 		shopMenu.enabled = false;
+		controlMenu.enabled = false;
 	}
 
 	public void ExitOptions()
@@ -64,6 +69,7 @@ public class MainMenu : MonoBehaviour {
 		creditsMenu.enabled = false;
 		planetMenu.enabled = false;
 		shopMenu.enabled = false;
+		controlMenu.enabled = false;
 	}
 
 	public void CreditMenu()
@@ -74,6 +80,7 @@ public class MainMenu : MonoBehaviour {
 		creditsMenu.enabled = true;
 		planetMenu.enabled = false;
 		shopMenu.enabled = false;
+		controlMenu.enabled = false;
 	}
 
 	public void PlanetSelection()
@@ -84,6 +91,7 @@ public class MainMenu : MonoBehaviour {
 		creditsMenu.enabled = false;
 		planetMenu.enabled = true;
 		shopMenu.enabled = false;
+		controlMenu.enabled = false;
 	}
 
 	public void ShopMenu()
@@ -94,5 +102,17 @@ public class MainMenu : MonoBehaviour {
 		creditsMenu.enabled = false;
 		planetMenu.enabled = false;
 		shopMenu.enabled = true;
+		controlMenu.enabled = false;
+	}
+
+	public void ControlMenu()
+	{
+		startMenu.enabled = false;
+		optionMenu.enabled = false;
+		tutorialMenu.enabled = false;
+		creditsMenu.enabled = false;
+		planetMenu.enabled = false;
+		shopMenu.enabled = false;
+		controlMenu.enabled = true;
 	}
 }
