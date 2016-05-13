@@ -24,6 +24,8 @@ public class EnemyShooting : MonoBehaviour
 
 	void Update()
 	{
+		
+
 		if(bullets > 0 && Time.time > nextFire && enemyMovement.inRange && enemyMovement.target )
 		{
 			Shoot();
@@ -36,10 +38,15 @@ public class EnemyShooting : MonoBehaviour
 
 	private void Shoot ()
 	{
-		Bullet bullet = Instantiate (projectile, muzzle.position, muzzle.rotation) as Bullet;
+		
+		Quaternion rot = muzzle.rotation * Quaternion.Euler(0, Random.Range(-15, 15), 0);
+
+		Bullet bullet = Instantiate (projectile, muzzle.position, rot ) as Bullet;
 		bullet.shooter = transform;
 		bullets -= 1;
 		nextFire = Time.time + fireRate;
+
+		Debug.Log (rot);
 	}
 
 	private void Reload()

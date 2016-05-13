@@ -122,6 +122,8 @@ public class EnemyMovement : MonoBehaviour {
 		float distance = 0;
 		int id = 0;
 		for (int i = 0; i < players.Length; i++) {
+			if (!players[i])
+				continue;
 			float newDistance = Vector3.Distance (transform.position, players[i].transform.position);
 
 			if (newDistance < distance) 

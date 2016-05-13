@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour {
 	public float Speed, Damage;
+	[HideInInspector]
 	public Transform shooter;
 
 	Rigidbody rigidbody;
