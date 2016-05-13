@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour {
 	private InputHandler IH;
 
 	void Start () {
-		IH = GameObject.Find ("PlayerInventory").GetComponent<InputHandler> ();
+		IH = GameObject.FindGameObjectWithTag ("PlayerInventory").GetComponent<InputHandler> ();
 	}
 
 	Quaternion newRot;
