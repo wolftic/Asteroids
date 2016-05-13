@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class InputHandler : MonoBehaviour {
 
 
-	Dictionary<string, KeyCode> inputs = new Dictionary<string, KeyCode> ();
+	public Dictionary<string, KeyCode> inputs = new Dictionary<string, KeyCode> ();
 	float horizontal, vertical;
 
 	void Start(){

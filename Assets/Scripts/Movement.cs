@@ -12,18 +12,19 @@ public class Movement : MonoBehaviour {
 	private InputHandler IH;
 
 	void Start () {
+		IH = GameObject.Find ("PlayerInventory").GetComponent<InputHandler> ();
 	}
 
 	Quaternion newRot;
 
 	void Update () {
-		if(IH.GetAxis("Vertical") != 0) {
+		if(IH.GetAxis("vertical") != 0) {
 			for (int i = 0; i < thrusters.Length; i++) {
-				if (!thrusters [i].isPlaying && Input.GetAxisRaw("Vertical") > 0) {
+				if (!thrusters [i].isPlaying && Input.GetKeyDown(IH.inputs["forwardKnop"])) {
 					thrusters [i].Play ();
 				}
 			}
-			xSpeed += IH.GetAxis("Vertical");
+			xSpeed += IH.GetAxis("vertical");
 			xSpeed = Mathf.Clamp (xSpeed, 0f, maxSpeed);
 		} else {
 			for (int i = 0; i < thrusters.Length; i++) {
@@ -34,7 +35,7 @@ public class Movement : MonoBehaviour {
 			xSpeed *= 0.99f;
 		}
 
-		float horizontal = Input.GetAxis ("Horizontal");
+		float horizontal = IH.GetAxis("Horizontal");
 		newRot = Quaternion.Euler(-horizontal * 30.0f * Vector3.forward);;
 
 		transform.Translate (Vector3.forward * Time.deltaTime * xSpeed);
