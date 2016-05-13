@@ -9,19 +9,21 @@ public class Movement : MonoBehaviour {
 	public ParticleSystem[] thrusters;
 	public Transform target;
 
+	private InputHandler IH;
+
 	void Start () {
 	}
 
 	Quaternion newRot;
 
 	void Update () {
-		if(Input.GetAxisRaw("Vertical") != 0) {
+		if(IH.GetAxis("Vertical") != 0) {
 			for (int i = 0; i < thrusters.Length; i++) {
 				if (!thrusters [i].isPlaying && Input.GetAxisRaw("Vertical") > 0) {
 					thrusters [i].Play ();
 				}
 			}
-			xSpeed += Input.GetAxis ("Vertical");
+			xSpeed += IH.GetAxis("Vertical");
 			xSpeed = Mathf.Clamp (xSpeed, 0f, maxSpeed);
 		} else {
 			for (int i = 0; i < thrusters.Length; i++) {

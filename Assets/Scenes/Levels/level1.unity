@@ -190,7 +190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &379908105
 Transform:
   m_ObjectHideFlags: 0
@@ -553,7 +553,7 @@ MonoBehaviour:
   offset: {x: -5, y: 3, z: -5}
   left: 113
   right: 101
-  ySpeed: 20
+  ySpeed: 150
 --- !u!4 &1649357169
 Transform:
   m_ObjectHideFlags: 0
