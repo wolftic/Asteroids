@@ -26,34 +26,32 @@ public class InputHandler : MonoBehaviour {
 
 	void Update() {
 
-		if (Input.GetKey (inputs["leftKnop"])) {
-			if (horizontal >= 1)
-				return;
-			horizontal -= Time.deltaTime * 3;
-		} else if (Input.GetKey (inputs["rightKnop"])) {
-			if (horizontal <= -1)
-				return;
-			horizontal += Time.deltaTime * 3;
+		if (Input.GetKey (inputs["leftKnop"]) && !Input.GetKey (inputs["rightKnop"])) {
+			if (horizontal <= 1) {
+				horizontal -= Time.deltaTime * 3;
+			}
+		} else if (Input.GetKey (inputs["rightKnop"]) && !Input.GetKey (inputs["leftKnop"])) {
+			if (horizontal >= -1) {
+				horizontal += Time.deltaTime * 3;
+			}
 		} else {
 			horizontal = Mathf.Lerp (0, horizontal, Time.deltaTime * 3);
 		}
 
-		if (Input.GetKey (inputs["forwardKnop"])) {
-			if (vertical >= 1)
-				return;
-			vertical += Time.deltaTime * 3;
-		} else if (Input.GetKey (inputs["breakKnop"])) {
-			if (vertical <= -1) return;
-			vertical -= Time.deltaTime * 3;
-
+		if (Input.GetKey (inputs ["forwardKnop"]) && !Input.GetKey (inputs ["breakKnop"])) {
+			if (vertical <= 1) {
+				vertical += Time.deltaTime * 3;
+			}
+		} else if (Input.GetKey (inputs["breakKnop"]) && !Input.GetKey (inputs["forwardKnop"])) {
+			if (vertical >= -1) {
+				vertical -= Time.deltaTime * 3;
+			}
 		} else {
 			vertical = Mathf.Lerp (0, vertical, Time.deltaTime * 3);
 		}
 
 		horizontal = Mathf.Clamp (horizontal, -1, 1);
 		vertical = Mathf.Clamp (vertical, -1, 1);
-
-		Debug.Log (GetAxis ("horizontal") + " | " + GetAxis ("vertical"));
 	}
 
 	public float GetAxis(string axis) {
