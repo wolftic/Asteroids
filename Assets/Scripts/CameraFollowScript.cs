@@ -10,6 +10,11 @@ public class CameraFollowScript : MonoBehaviour {
 	private float yRotation;
 	[SerializeField]
 	private float ySpeed;
+	private InputHandler inputHandler;
+
+	void Awake(){
+		inputHandler = GameObject.FindObjectOfType <InputHandler> ();
+	}
 
 	void Start () {
 		transform.GetChild(0).localPosition = offset;
@@ -18,9 +23,9 @@ public class CameraFollowScript : MonoBehaviour {
 	void Update () {
 		if(player)
 		{
-			if (Input.GetKey (left)) {
+			if (Input.GetKey (inputHandler.inputs["camLeft"])) {
 				yRotation += Time.deltaTime * ySpeed;
-			} else if (Input.GetKey (right)) {
+			} else if (Input.GetKey (inputHandler.inputs["camRight"])) {
 				yRotation -= Time.deltaTime * ySpeed;
 			}
 			transform.rotation = Quaternion.Euler (0, yRotation, 0);

@@ -8,10 +8,11 @@ public class InputHandler : MonoBehaviour {
 	public Dictionary<string, KeyCode> inputs = new Dictionary<string, KeyCode> ();
 	float horizontal, vertical;
 
+
 	void Start(){
 		inputs.Add ("camLeft", KeyCode.Q);
 		inputs.Add ("camRight", KeyCode.E);
-		inputs.Add ("pauzeKnop", KeyCode.Escape);
+		inputs.Add ("pauzeKnop", KeyCode.Escape); 
 		inputs.Add ("shootKnop", KeyCode.Space);
 		inputs.Add ("reloadKnop", KeyCode.R);
 		inputs.Add ("forwardKnop", KeyCode.W);

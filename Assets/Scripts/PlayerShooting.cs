@@ -15,14 +15,19 @@ public class PlayerShooting : MonoBehaviour
 	private float nextFire = 0.0F;
 	private float bullets = 12;
 	private float reloadTime = 1.5F;
+	private InputHandler inputHandler;
+
+	void Awake(){
+		inputHandler = GameObject.FindObjectOfType <InputHandler> ();
+	}
 
 	void Update()
 	{
-		if(bullets > 0 && Time.time > nextFire && Input.GetMouseButton (0))
+		if(bullets > 0 && Time.time > nextFire && Input.GetKey (inputHandler.inputs["shootKnop"]))
 		{
 			Shoot();
 		}
-		else if(bullets < 10 && Input.GetKey ("r"))
+		else if(bullets < 10 && Input.GetKey (inputHandler.inputs["reloadKnop"]))
 		{
 			Reload();
 		}
