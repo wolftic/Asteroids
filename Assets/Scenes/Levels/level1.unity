@@ -102,7 +102,7 @@ GameObject:
   - 23: {fileID: 152463448}
   m_Layer: 0
   m_Name: Compass
-  m_TagString: Untagged
+  m_TagString: Compass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,8 +114,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 152463446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.681, z: 1.274}
-  m_LocalScale: {x: 0.8, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.685, z: 1.274}
+  m_LocalScale: {x: 1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 368338817}
   m_RootOrder: 0
@@ -534,6 +534,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 134056, guid: ba5c6420b5c1d9d4aaddd776888c4986, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba5c6420b5c1d9d4aaddd776888c4986, type: 2}
   m_IsPrefabParent: 0
@@ -646,9 +650,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 1649357169}
   - 114: {fileID: 1649357168}
+  - 114: {fileID: 1649357170}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -682,6 +687,19 @@ Transform:
   - {fileID: 368338817}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &1649357170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649357167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3491a797da2ef5c40a80a0399e9ffef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compass: {fileID: 152463448}
+  prefab: {fileID: 21261094, guid: bcb1e69a4e87fbb45948c2019fa78bf4, type: 2}
 --- !u!1 &1693896162
 GameObject:
   m_ObjectHideFlags: 0

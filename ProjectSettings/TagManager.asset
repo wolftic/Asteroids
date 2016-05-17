@@ -27,6 +27,8 @@ TagManager:
   - Buyknop7
   - Buyknop8
   - Buyknop9
+  - Camera
+  - Compass
   layers:
   - Default
   - TransparentFX

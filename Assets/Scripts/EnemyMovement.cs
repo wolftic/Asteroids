@@ -20,6 +20,7 @@ public class EnemyMovement : MonoBehaviour {
 		inRange = false;
 
 		players = GameObject.FindGameObjectsWithTag ("Player");
+		GameObject.FindGameObjectWithTag ("Camera").GetComponent<CompassScript> ().AddPoint ("Enemy", gameObject, Color.red);
 	}
 
 	Quaternion newRot;

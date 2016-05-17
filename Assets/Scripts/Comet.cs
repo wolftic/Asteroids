@@ -2,14 +2,12 @@
 using System.Collections;
 
 public class Comet : MonoBehaviour {
-	bool isSinking = false;
 	float time;
 
 	void Start () {
 		time = Time.time + 10;
+		GameObject.FindGameObjectWithTag ("Camera").GetComponent<CompassScript> ().AddPoint ("Comet", gameObject, Color.green);
 	}
-
-	float percentage = 0;
 
 	void Update () {
 		transform.Translate (Vector3.forward * 10.0f * Time.deltaTime);
