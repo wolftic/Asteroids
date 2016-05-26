@@ -16,10 +16,12 @@ public class EnemyShooting : MonoBehaviour
 	private float bullets = 20;
 	private float reloadTime = 1.8F;
 	private EnemyMovement enemyMovement;
+	private InputHandler inputHandler;
 
 	void Awake()
 	{
 		enemyMovement = GetComponent <EnemyMovement>();
+		inputHandler = GameObject.FindObjectOfType <InputHandler> ();
 	}
 
 	void Update()
@@ -41,7 +43,16 @@ public class EnemyShooting : MonoBehaviour
 		
 		Quaternion rot = muzzle.rotation * Quaternion.Euler(0, Random.Range(-15, 15), 0);
 
-		Bullet bullet = Instantiate (projectile, muzzle.position, rot ) as Bullet;
+		GameObject obj = PoolingScript.current.GetPooledObject ();
+
+		if (obj == null)
+			return;
+
+		obj.transform.position = transform.position;
+		obj.transform.rotation = rot;
+		obj.SetActive (true);
+
+		Bullet bullet = obj.GetComponent <Bullet> ();
 		bullet.shooter = transform;
 		bullets -= 1;
 		nextFire = Time.time + fireRate;

@@ -44,9 +44,6 @@ public class PlayerShooting : MonoBehaviour
 		obj.transform.rotation = transform.rotation;
 		obj.SetActive (true);
 
-
-
-		//Bullet bullet = Instantiate (projectile, muzzle.position, muzzle.rotation) as Bullet;
 		Bullet bullet = obj.GetComponent <Bullet>();
 		bullet.shooter = transform;
 

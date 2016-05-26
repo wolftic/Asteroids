@@ -6,13 +6,13 @@ public class PoolingScript : MonoBehaviour {
 
 	public static PoolingScript current;
 	public GameObject pooledObject;
-	public int pooledAmount = 20;
+	[HideInInspector]
+	public int pooledAmount = 100;
 	public bool willGrow = true;
 
 	List<GameObject> pooledObjects;
 
 	void Awake(){
-
 		current = this;
 	}
 
