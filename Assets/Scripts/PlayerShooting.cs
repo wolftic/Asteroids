@@ -35,8 +35,21 @@ public class PlayerShooting : MonoBehaviour
 
 	private void Shoot ()
 	{
-		Bullet bullet = Instantiate (projectile, muzzle.position, muzzle.rotation) as Bullet;
+		GameObject obj = PoolingScript.current.GetPooledObject ();
+
+		if (obj == null)
+			return;
+
+		obj.transform.position = transform.position;
+		obj.transform.rotation = transform.rotation;
+		obj.SetActive (true);
+
+
+
+		//Bullet bullet = Instantiate (projectile, muzzle.position, muzzle.rotation) as Bullet;
+		Bullet bullet = obj.GetComponent <Bullet>();
 		bullet.shooter = transform;
+
 		bullets -= 1;
 		nextFire = Time.time + fireRate;
 	}

@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour {
 		rigidbody = GetComponent<Rigidbody> ();
 		rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
 
-		Destroy (gameObject, 5f);
+		Invoke ("DestroyFunction", 5f);
 	}
 
 	void Update () {
@@ -28,18 +28,26 @@ public class Bullet : MonoBehaviour {
 		if (other.transform.tag == "Player") {
 			other.transform.GetComponent<PlayerHealth> ().doDamage (Damage);
 			Debug.Log ("HIT");
-			Destroy (gameObject);
+			DestroyFunction ();
 		}
 
 		if (other.transform.tag == "Enemy") {
 			other.transform.GetComponent<EnemyHealth> ().doDamage (Damage);
 			Debug.Log ("HIT");
-			Destroy (gameObject);
+			DestroyFunction ();
 		}
 		if(other.transform.tag == "Comet")
 		{
-			Destroy (gameObject);
+			DestroyFunction ();
 			other.gameObject.GetComponent <Comet> ().split();
 		}
+	}
+
+	void DestroyFunction(){
+		gameObject.SetActive (false);
+	}
+
+	void OnDisable(){
+		CancelInvoke ();
 	}
 }

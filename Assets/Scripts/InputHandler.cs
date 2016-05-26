@@ -10,8 +10,8 @@ public class InputHandler : MonoBehaviour {
 
 
 	void Start(){
-		inputs.Add ("camLeft", KeyCode.Q);
-		inputs.Add ("camRight", KeyCode.E);
+		inputs.Add ("camLeft", KeyCode.E);
+		inputs.Add ("camRight", KeyCode.Q);
 		inputs.Add ("pauzeKnop", KeyCode.Escape); 
 		inputs.Add ("shootKnop", KeyCode.Space);
 		inputs.Add ("reloadKnop", KeyCode.R);
