@@ -35,7 +35,7 @@ public class PlayerShooting : MonoBehaviour
 
 	private void Shoot ()
 	{
-		GameObject obj = PoolingScript.current.GetPooledObject ();
+		GameObject obj = PoolingScript.current.GetPooledObject (projectile.gameObject);
 
 		if (obj == null)
 			return;

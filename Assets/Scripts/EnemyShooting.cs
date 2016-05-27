@@ -43,7 +43,7 @@ public class EnemyShooting : MonoBehaviour
 		
 		Quaternion rot = muzzle.rotation * Quaternion.Euler(0, Random.Range(-15, 15), 0);
 
-		GameObject obj = PoolingScript.current.GetPooledObject ();
+		GameObject obj = PoolingScript.current.GetPooledObject (projectile.gameObject);
 
 		if (obj == null)
 			return;
@@ -56,8 +56,6 @@ public class EnemyShooting : MonoBehaviour
 		bullet.shooter = transform;
 		bullets -= 1;
 		nextFire = Time.time + fireRate;
-
-		Debug.Log (rot);
 	}
 
 	private void Reload()

@@ -6,9 +6,10 @@ public class CometSpawner : MonoBehaviour {
 	public float spawnDelay;
 	public float radius;
 	private float spawnTime;
+	private InputHandler inputHandler;
 
 	void Start () {
-	
+		inputHandler = GameObject.FindObjectOfType <InputHandler> ();
 	}
 
 	void Update () {
@@ -25,7 +26,22 @@ public class CometSpawner : MonoBehaviour {
 		}
 	}
 
-	void SpawnComet (Vector3 position, Quaternion rotation) {
-		Instantiate (comet, position, rotation);
+	public void SpawnComet(Vector3 position, Quaternion rotation) {
+		SpawnComet (position, rotation, comet.localScale);
+	}
+
+	public void SpawnComet (Vector3 position, Quaternion rotation, Vector3 scale) {
+		//Instantiate (comet, position, rotation);
+		GameObject obj = PoolingScript.current.GetPooledObject (comet.gameObject);
+
+		if (obj == null)
+			return;
+
+		obj.transform.position = position;
+		obj.transform.rotation = rotation;
+		obj.transform.localScale = scale;
+		obj.SetActive (true);
+
+		Debug.Log (obj);
 	}
 }

@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 2100000, guid: 83b42b3f4f8188d47b95cbd6bb94d47e, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cc5c357b3d539c44e94f5295a98cb2a3, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -112,7 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0861ea1715cf99346be4adcd867fe321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 177530, guid: c6835c58616156143b45c3ebb82ead00, type: 2}
+  pooledObject:
+  - {fileID: 177530, guid: c6835c58616156143b45c3ebb82ead00, type: 2}
+  - {fileID: 177530, guid: c6835c58616156143b45c3ebb82ead00, type: 2}
+  - {fileID: 165600, guid: 1cfae7f5834270c408639cbd12ae3ec5, type: 2}
   pooledAmount: 20
   willGrow: 1
 --- !u!4 &121645403
@@ -775,11 +778,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 151696691}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -163, y: -164}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 533, y: 228}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1465672347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +954,8 @@ MonoBehaviour:
   Health: 100
   Range: 50
   AbilityCooldown: 5
+  speed: 0
+  bullet: {fileID: 0}
   Attacks:
   - m_PersistentCalls:
       m_Calls: []

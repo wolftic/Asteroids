@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void DestroyFunction(){
-		gameObject.SetActive (false);
+		PoolingScript.current.Destroy (gameObject);
 	}
 
 	void OnDisable(){
