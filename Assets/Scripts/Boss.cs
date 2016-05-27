@@ -2,14 +2,12 @@
 using UnityEngine.Events;
 using System.Collections;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class Boss : MonoBehaviour {
 	[Header("Boss information")]
 	public float Health;
-	[Range(1, 20)]
+	[Range(1, 50)]
 	public float Range;
 	public float AbilityCooldown;
-	public NavMeshAgent agent;
 
 	[Header("Attacks")]
 	public UnityEvent[] Attacks = new UnityEvent[1];
@@ -26,12 +24,9 @@ public class Boss : MonoBehaviour {
 	private Transform target;
 	private StatusEffect.StatusType statusType;
 	private float cooldown;
-	private Animator anim;
 
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
-		agent = GetComponent<NavMeshAgent> ();
-		anim = GetComponent<Animator> ();
 
 		Alive = true;
 		statusType = StatusEffect.StatusType.NONE;
@@ -43,18 +38,16 @@ public class Boss : MonoBehaviour {
 			if (!inRange) {
 				inRange = true;
 				OnInRange.Invoke ();
-				agent.SetDestination (transform.position);
-				anim.SetBool ("Walking", false);
 				Debug.Log ("In range");
 			}
+			transform.LookAt (target, transform.up);
+			transform.Translate (Vector3.forward*Time.deltaTime);
 		} else {
 			if (inRange) {
 				inRange = false;
 				OnOutOfRange.Invoke ();
-				anim.SetBool ("Walking", true);
 				Debug.Log ("Out of range");
 			}
-			agent.SetDestination (target.position);
 		}
 
 		if (Health <= 0) {
