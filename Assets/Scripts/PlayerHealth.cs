@@ -19,12 +19,6 @@ public class PlayerHealth : MonoBehaviour
 		{
 			Regeneration ();
 		}
-
-		if(Health <= 0)
-		{
-			Destroy (gameObject);
-
-		}
 	}
 
 	private void Regeneration()

@@ -41,7 +41,5 @@ public class CometSpawner : MonoBehaviour {
 		obj.transform.rotation = rotation;
 		obj.transform.localScale = scale;
 		obj.SetActive (true);
-
-		Debug.Log (obj);
 	}
 }

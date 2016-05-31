@@ -43,7 +43,6 @@ public class Comet : MonoBehaviour {
 
 				Quaternion rot = transform.rotation;
 				rot.y *= Random.Range (-45, 45);
-				Debug.Log (cometSpawner);
 				cometSpawner.SpawnComet (transform.position, rot, scale);
 			}
 		}

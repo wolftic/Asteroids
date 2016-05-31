@@ -19,7 +19,7 @@ public class PoolingScript : MonoBehaviour {
 	}
 
 	void Start(){
-
+		GameObject bulletsAndComets = new GameObject ("Bullets and Comets");
 		pooledObjects = new List<List<GameObject>> ();
 		for (int x = 0; x < pooledObject.Length; x++){
 			
@@ -30,6 +30,7 @@ public class PoolingScript : MonoBehaviour {
 				GameObject obj = (GameObject)Instantiate (pooledObject[x]);
 				obj.SetActive (false);
 				pooledObjects[x].Add (obj);
+				obj.transform.SetParent (bulletsAndComets.transform);
 			}
 		}
 	}

@@ -137,7 +137,6 @@ public class EnemyMovement : MonoBehaviour {
 
 		if (distance <= SEERANGE && distance != 0) {
 			target = players [id].transform;
-			//Debug.Log ("imhere");
 		} else {
 			target = null;
 		}
