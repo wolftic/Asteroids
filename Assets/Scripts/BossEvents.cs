@@ -3,9 +3,10 @@ using System.Collections;
 
 public class BossEvents : MonoBehaviour {
 	private Boss boss;
+	[SerializeField]private Canvas blindCanvas;
 
 	void Start(){
-
+		blindCanvas.enabled = false;
 		boss = GetComponent <Boss> ();
 
 	}
@@ -85,7 +86,8 @@ public class BossEvents : MonoBehaviour {
 	//Dark power ups
 	public void Blindness()
 	{
-
+		blindCanvas.enabled = false;
+		Invoke ("BlindFix", 2);
 	}
 
 	//Ultimate power ups
@@ -93,4 +95,12 @@ public class BossEvents : MonoBehaviour {
 	{
 
 	}
+
+
+
+	private void BlindFix(){
+		blindCanvas.enabled = true;
+	}
+
+
 }
