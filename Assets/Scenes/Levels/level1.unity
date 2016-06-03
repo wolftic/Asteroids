@@ -209,7 +209,7 @@ MonoBehaviour:
   - {fileID: 177530, guid: c6835c58616156143b45c3ebb82ead00, type: 2}
   - {fileID: 177530, guid: c6835c58616156143b45c3ebb82ead00, type: 2}
   - {fileID: 165600, guid: 1cfae7f5834270c408639cbd12ae3ec5, type: 2}
-  pooledAmount: 20
+  pooledAmount: 10
   willGrow: 1
 --- !u!4 &121645403
 Transform:
@@ -1314,7 +1314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 1360614202}
-  restartButton: {fileID: 844849174}
   gameOverCanvas: {fileID: 13452013}
 --- !u!1 &1465672345
 GameObject:

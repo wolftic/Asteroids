@@ -23,7 +23,7 @@ public class GameOverScript : MonoBehaviour {
 	}
 
 	void Update(){
-		if (playerHealth.Health <= 0 && playerdying) {
+		if (playerHealth.Health <= 0 && !playerdying) {
 			Debug.Log ("die");
 			player.SetActive (false);
 			playerdying = true;
