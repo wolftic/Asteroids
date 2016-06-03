@@ -10,9 +10,10 @@ public class Boss : MonoBehaviour {
 	public float AbilityCooldown;
 	public float speed;
 	public Bullet bullet;
+	public Bullet specialBullet;
 	public GameObject minion;
 	public Transform muzzle;
-
+		
 	[Header("Attacks")]
 	public UnityEvent[] Attacks = new UnityEvent[1];
 
@@ -45,7 +46,9 @@ public class Boss : MonoBehaviour {
 				Debug.Log ("In range");
 			}
 			transform.LookAt (target, transform.up);
-			transform.Translate (Vector3.forward*speed*Time.deltaTime);
+			if (Vector3.Distance (transform.position, target.position) >= Range/3) {
+				transform.Translate (Vector3.forward * speed * Time.deltaTime);
+			}
 		} else {
 			if (inRange) {
 				inRange = false;
