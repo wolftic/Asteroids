@@ -13,7 +13,7 @@ public class BossEvents : MonoBehaviour {
 	/*
 	- boss events
 			default
-				shoot, spawn minnions, 
+				shoot, spawn minions, 
 			Ice boss
 				Big Ice Shot, player bevriezen,
 			Dessert Boss
@@ -29,15 +29,15 @@ public class BossEvents : MonoBehaviour {
 	//default power ups
 	public void Shoot()
 	{
-
-
-
+		GameObject bullet = PoolingScript.current.GetPooledObject (boss.bullet.gameObject, true);
+		bullet.transform.rotation = boss.muzzle.rotation;
+		bullet.transform.position = boss.muzzle.position;
 	}
 
 	//default power ups
-	public void SpawnMinnions()
+	public void SpawnMinions()
 	{
-
+		Instantiate (boss.minion, transform.position, Quaternion.identity);
 	}
 
 	//Ice power ups
