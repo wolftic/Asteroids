@@ -41,7 +41,6 @@ public class PoolingScript : MonoBehaviour {
 	public GameObject GetPooledObject(GameObject type, bool active = false){
 		for (int x = 0; x < pooledObject.Length; x++) {
 			if(pooledObject[x] != type) {
-				Debug.Log (pooledObject [x] + " " + type);
 				continue; 
 			}
 

@@ -11,8 +11,6 @@ public class PlayerHealth : MonoBehaviour
 	public void doDamage(float damage) 
 	{
 		Health -= damage;
-
-		Debug.Log ("h left"+Health);
 	}
 
 	void Update()

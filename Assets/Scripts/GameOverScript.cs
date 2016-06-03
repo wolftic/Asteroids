@@ -19,23 +19,19 @@ public class GameOverScript : MonoBehaviour {
 		playerHealth = player.GetComponent <PlayerHealth> ();
 		gameOverText.canvasRenderer.SetAlpha (0);
 		gameOverCanvas.enabled = false;
-
 	}
 
 	void Update(){
 		if (playerHealth.Health <= 0 && !playerdying) {
-			Debug.Log ("die");
 			player.SetActive (false);
 			playerdying = true;
 			GameOverFadeIn ();
-
-		} else
-			Debug.Log ("alive");
+		}
 	}
 
 	private void GameOverFadeIn(){
 		gameOverText.CrossFadeAlpha(1f, 3f, false);
-		Invoke ("ShowButtons", 3.2f);
+		Invoke ("ShowButtons", 3f);
 	}
 
 	private void ShowButtons(){

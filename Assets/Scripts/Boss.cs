@@ -43,7 +43,6 @@ public class Boss : MonoBehaviour {
 			if (!inRange) {
 				inRange = true;
 				OnInRange.Invoke ();
-				Debug.Log ("In range");
 			}
 			transform.LookAt (target, transform.up);
 			if (Vector3.Distance (transform.position, target.position) >= Range/3) {
@@ -53,7 +52,6 @@ public class Boss : MonoBehaviour {
 			if (inRange) {
 				inRange = false;
 				OnOutOfRange.Invoke ();
-				Debug.Log ("Out of range");
 			}
 		}
 
@@ -61,20 +59,16 @@ public class Boss : MonoBehaviour {
 			if (Alive) {
 				Alive = false;
 				OnDeath.Invoke ();
-				Debug.Log ("On death");
 			}
 		} else {
 			if (!Alive) {
 				Alive = true;
 				OnSpawn.Invoke ();
-				Debug.Log ("On spawn");
 			}
 		}
 
 		if (inRange && cooldown <= Time.time) {
 			cooldown = Time.time + AbilityCooldown;
-
-			Debug.Log ("Performed attack");
 
 			int performAttack = Mathf.RoundToInt (Random.Range (0, Attacks.Length));
 			Attacks [performAttack].Invoke ();
@@ -84,7 +78,6 @@ public class Boss : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		if (other.tag == "Bullet") {
 			OnHit.Invoke ();
-			Debug.Log ("On hit");
 		}
 
 		if (other.tag == "StatusEffect") {
