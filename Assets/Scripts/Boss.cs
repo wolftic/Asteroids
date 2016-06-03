@@ -10,6 +10,8 @@ public class Boss : MonoBehaviour {
 	public float AbilityCooldown;
 	public float speed;
 	public Bullet bullet;
+	public GameObject minion;
+	public Transform muzzle;
 
 	[Header("Attacks")]
 	public UnityEvent[] Attacks = new UnityEvent[1];
