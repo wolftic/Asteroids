@@ -31,15 +31,10 @@ public class CometSpawner : MonoBehaviour {
 	}
 
 	public void SpawnComet (Vector3 position, Quaternion rotation, Vector3 scale) {
-		//Instantiate (comet, position, rotation);
-		GameObject obj = PoolingScript.current.GetPooledObject (comet.gameObject);
+		Instantiate (comet, position, rotation);
 
-		if (obj == null)
-			return;
-
-		obj.transform.position = position;
-		obj.transform.rotation = rotation;
-		obj.transform.localScale = scale;
-		obj.SetActive (true);
+		transform.position = position;
+		transform.rotation = rotation;
+		transform.localScale = scale;
 	}
 }

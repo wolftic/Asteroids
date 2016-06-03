@@ -16,9 +16,6 @@ public class Comet : MonoBehaviour {
 
 	void Update () {
 
-		Debug.Log ("hallo"+ this.name);
-
-
 		transform.Translate (Vector3.forward * 10.0f * Time.deltaTime);
 		transform.GetChild (0).LookAt (Camera.main.transform.position);
 		if (time < Time.time) {
@@ -51,6 +48,6 @@ public class Comet : MonoBehaviour {
             rot.y *= Random.Range(-45, 45);
             cometSpawner.SpawnComet(transform.position, rot, scale);
         }
-		PoolingScript.current.Destroy (gameObject);
+		Destroy (gameObject);
 	}
 }
