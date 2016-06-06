@@ -1597,7 +1597,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1918426882}
-        m_MethodName: Blindness
+        m_MethodName: Invisible
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
