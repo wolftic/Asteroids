@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour 
 {
@@ -9,11 +10,16 @@ public class PlayerShooting : MonoBehaviour
 	public float shootDelay;
 	public float bulletSpeed;
 	public float fireRate = 0.4F;
-	public AudioClip shotSound1;
-	public AudioClip shotSound2;
+	[SerializeField]
+	private Image ammoBar;
+	[SerializeField]
+	private AudioClip shotSound1;
+	[SerializeField]
+	private AudioClip shotSound2;
 
 	private float nextFire = 0.0F;
 	private float bullets = 12;
+	private float maxBullets = 12;
 	private float reloadTime = 1.5F;
 	private InputHandler inputHandler;
 
@@ -31,6 +37,8 @@ public class PlayerShooting : MonoBehaviour
 		{
 			Reload();
 		}
+
+		ammoBar.fillAmount = bullets / maxBullets;
 	}
 
 	private void Shoot ()

@@ -4,14 +4,13 @@ using System.Collections;
 public class BossEvents : MonoBehaviour {
 	private Boss boss;
 	[SerializeField]private Canvas blindCanvas;
-	private SpriteRenderer ren;
+	private GameObject ren;
 	[SerializeField]
 	private GameObject[] visible;
 
 	void Start(){
 		blindCanvas.enabled = false;
 		boss = GetComponent <Boss> ();
-		ren = gameObject.GetComponent <SpriteRenderer>();
 	}
 
 	/*
@@ -66,7 +65,9 @@ public class BossEvents : MonoBehaviour {
 	public void Invisible()
 	{
 		Debug.Log ("invis");
-		ren.enabled = false;
+		for (int i = 0; i < visible.Length; i++) {
+			visible [i].GetComponent <SpriteRenderer> ().enabled = false;
+		}
 	}
 
 	//Jungle power ups
