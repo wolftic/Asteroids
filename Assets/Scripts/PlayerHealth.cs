@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour 
 {
 	public float Health;
-
+	[SerializeField]
+	private Image healthBar;
 	private float regenDelay = 1.0F;
 	private float regenTime = 0.0F;
 
@@ -21,6 +23,9 @@ public class PlayerHealth : MonoBehaviour
 		{
 			Regeneration ();
 		}
+
+		healthBar.fillAmount = Health / 100;
+
 	}
 
 	private void Regeneration()

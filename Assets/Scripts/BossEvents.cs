@@ -5,6 +5,8 @@ public class BossEvents : MonoBehaviour {
 	private Boss boss;
 	[SerializeField]private Canvas blindCanvas;
 	private SpriteRenderer ren;
+	[SerializeField]
+	private GameObject[] visible;
 
 	void Start(){
 		blindCanvas.enabled = false;
