@@ -1236,6 +1236,10 @@ Prefab:
       propertyPath: blindCanvas
       value: 
       objectReference: {fileID: 749081988}
+    - target: {fileID: 113620, guid: 87a2e55b946d7244ba747f4b96095813, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a2e55b946d7244ba747f4b96095813, type: 2}
   m_IsPrefabParent: 0
