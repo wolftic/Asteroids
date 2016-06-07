@@ -22,17 +22,17 @@ public class CompassScript : MonoBehaviour {
 			this.target = target;
 			this.color = color;
 			this.sprite = Instantiate(sprite) as SpriteRenderer;
-			this.sprite.transform.SetParent(GameObject.FindGameObjectWithTag("Compass").transform);
-			this.sprite.transform.localScale = new Vector3(0.2f, 2f, 1f);
+			this.sprite.transform.SetParent(GameObject.FindGameObjectWithTag("Compass").transform, true);
+			//this.sprite.transform.localScale = new Vector3(0.02f, .2f, 1f);
 		}
 
 		public Point(string name, GameObject target, SpriteRenderer sprite) {
 			this.name = name;
 			this.target = target;
-			this.color = Color.red;
+			this.color = Color.white;
 			this.sprite = Instantiate(sprite) as SpriteRenderer;
-			this.sprite.transform.SetParent(GameObject.FindGameObjectWithTag("Compass").transform);
-			this.sprite.transform.localScale = new Vector3(0.2f, 1.2f, 1f);
+			this.sprite.transform.SetParent(GameObject.FindGameObjectWithTag("Compass").transform, true);
+			//this.sprite.transform.localScale = new Vector3(0.02f, .2f, 1f);
 		}
 	}
 
@@ -40,7 +40,7 @@ public class CompassScript : MonoBehaviour {
 
 	void Start () {
 		//AddPoint ("Shop", Vector3.forward * 5, Color.blue, prefab);
-		nullPoint = new Point("null", gameObject, Color.black, prefab[0]);
+		//nullPoint = new Point("null", gameObject, Color.black, prefab[0]);
 	}
 
 	void Update () {
@@ -49,7 +49,7 @@ public class CompassScript : MonoBehaviour {
 		compass.material.mainTextureOffset = new Vector2 (yAxis, 0);
 
 		for (int i = 0; i < points.Count; i++) {
-			if (points [i].target == null) {
+			if (points [i].target == null || !points [i].target.activeInHierarchy) {
 				Destroy (points [i].sprite.gameObject);
 				points.Remove (points [i]);
 				return;
@@ -82,6 +82,6 @@ public class CompassScript : MonoBehaviour {
 			}
 		}
 
-		return nullPoint;
+		return nullPoint;	
 	}
 }

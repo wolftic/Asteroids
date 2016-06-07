@@ -4,6 +4,8 @@ using System.Collections;
 public class Comet : MonoBehaviour {
 	float time;
 	private CometSpawner cometSpawner;
+	[SerializeField]
+	private SpriteRenderer icon;
 
 	void Start () {
 		cometSpawner = GameObject.Find ("CometSpawner").GetComponent <CometSpawner> ();
@@ -11,7 +13,7 @@ public class Comet : MonoBehaviour {
 
 	void OnEnable () {
 		time = Time.time + 10;
-		GameObject.FindGameObjectWithTag ("Camera").GetComponent<CompassScript> ().AddPoint ("Comet", gameObject, Color.green);
+		GameObject.FindGameObjectWithTag ("Camera").GetComponent<CompassScript> ().AddPoint ("Comet", gameObject, Color.white, icon);
 	}
 
 	void Update () {
