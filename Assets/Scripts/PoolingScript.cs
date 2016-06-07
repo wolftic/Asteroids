@@ -24,7 +24,7 @@ public class PoolingScript : MonoBehaviour {
 	void Start(){
 		pooledObjects = new List<List<GameObject>> ();
 		for (int x = 0; x < pooledObject.Length; x++){
-			
+
 			pooledObjects.Add (new List<GameObject>());
 			Debug.Log ("Made list of GameObject: " + pooledObject[x]);
 
@@ -66,3 +66,4 @@ public class PoolingScript : MonoBehaviour {
 		obj.SetActive (false);
 	}
 }
+

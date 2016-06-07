@@ -46,3 +46,4 @@ public class CometSpawner : MonoBehaviour {
 		transform.localScale = scale;
 	}
 }
+
