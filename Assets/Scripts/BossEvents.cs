@@ -4,14 +4,14 @@ using System.Collections;
 public class BossEvents : MonoBehaviour {
 	private Boss boss;
 	[SerializeField]private Canvas blindCanvas;
-	private SpriteRenderer ren;
+	private GameObject ren;
 	[SerializeField]
 	private GameObject[] visible;
+	private float bossAlpha = 0.1f;
 
 	void Start(){
 		blindCanvas.enabled = false;
 		boss = GetComponent <Boss> ();
-		ren = gameObject.GetComponent <SpriteRenderer>();
 	}
 
 	/*
@@ -66,7 +66,11 @@ public class BossEvents : MonoBehaviour {
 	public void Invisible()
 	{
 		Debug.Log ("invis");
-		ren.enabled = false;
+		for (int i = 0; i < visible.Length; i++) {
+			//visible [i].GetComponent <SpriteRenderer> ().enabled = false;
+			Color alphaChange = visible[i].GetComponent <SpriteRenderer>().color;
+			alphaChange = new Color (alphaChange.r, alphaChange.g, alphaChange.b, 0.1f);
+		}
 	}
 
 	//Jungle power ups
