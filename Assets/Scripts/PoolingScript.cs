@@ -46,7 +46,7 @@ public class PoolingScript : MonoBehaviour {
 
 			for (int i = 0; i < pooledObjects[x].Count; i++) {
 				if (!pooledObjects [x] [i].activeSelf) {
-					//pooledObjects [x] [i].SetActive (active);
+					pooledObjects [x] [i].SetActive (active);
 					return pooledObjects [x] [i];
 				}
 			}

@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3beb6867fa9434786d10d21195afcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comet: {fileID: 499074, guid: 1cfae7f5834270c408639cbd12ae3ec5, type: 2}
+  comet: {fileID: 165424, guid: e228996f613c117469b754ad7c9344b7, type: 2}
   spawnDelay: 5
   radius: 25
 --- !u!4 &1719991384

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CometSpawner : MonoBehaviour {
-	public Transform comet;
+	public GameObject comet;
 	public float spawnDelay;
 	public float radius;
 	private float spawnTime;
@@ -27,12 +27,11 @@ public class CometSpawner : MonoBehaviour {
 	}
 
 	public void SpawnComet(Vector3 position, Quaternion rotation) {
-		SpawnComet (position, rotation, comet.localScale);
+		SpawnComet (position, rotation, comet.transform.localScale);
 	}
 
 	public void SpawnComet (Vector3 position, Quaternion rotation, Vector3 scale) {
-		//Instantiate (comet, position, rotation);
-		GameObject obj = PoolingScript.current.GetPooledObject (comet.gameObject);
+		GameObject obj = PoolingScript.current.GetPooledObject (comet);
 
 		if (obj == null)
 			return;
@@ -41,5 +40,9 @@ public class CometSpawner : MonoBehaviour {
 		obj.transform.rotation = rotation;
 		obj.transform.localScale = scale;
 		obj.SetActive (true);
+
+		transform.position = position;
+		transform.rotation = rotation;
+		transform.localScale = scale;
 	}
 }

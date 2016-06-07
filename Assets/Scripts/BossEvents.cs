@@ -3,11 +3,15 @@ using System.Collections;
 
 public class BossEvents : MonoBehaviour {
 	private Boss boss;
+	[SerializeField]private Canvas blindCanvas;
+	private SpriteRenderer ren;
+	[SerializeField]
+	private GameObject[] visible;
 
 	void Start(){
-
+		blindCanvas.enabled = false;
 		boss = GetComponent <Boss> ();
-
+		ren = gameObject.GetComponent <SpriteRenderer>();
 	}
 
 	/*
@@ -61,7 +65,8 @@ public class BossEvents : MonoBehaviour {
 	//Dessert power ups
 	public void Invisible()
 	{
-
+		Debug.Log ("invis");
+		ren.enabled = false;
 	}
 
 	//Jungle power ups
@@ -85,7 +90,8 @@ public class BossEvents : MonoBehaviour {
 	//Dark power ups
 	public void Blindness()
 	{
-
+		blindCanvas.enabled = false;
+		Invoke ("BlindFix", 2);
 	}
 
 	//Ultimate power ups
@@ -93,4 +99,12 @@ public class BossEvents : MonoBehaviour {
 	{
 
 	}
+
+
+
+	private void BlindFix(){
+		blindCanvas.enabled = true;
+	}
+
+
 }
