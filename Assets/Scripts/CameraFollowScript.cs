@@ -6,6 +6,7 @@ public class CameraFollowScript : MonoBehaviour {
 	public Transform player;
 	public Vector3 offset;
 	public KeyCode left, right;
+	public bool BackCam = false;
 
 	private float yRotation;
 	[SerializeField]
@@ -23,12 +24,20 @@ public class CameraFollowScript : MonoBehaviour {
 	void Update () {
 		if(player)
 		{
-			if (Input.GetKey (inputHandler.inputs["camLeft"])) {
+			/*if (Input.GetKey (inputHandler.inputs["camLeft"])) {
 				yRotation += Time.deltaTime * ySpeed;
 			} else if (Input.GetKey (inputHandler.inputs["camRight"])) {
 				yRotation -= Time.deltaTime * ySpeed;
+			}*/
+			yRotation = player.eulerAngles.y;
+
+			Debug.Log (yRotation);
+
+			if (BackCam) {
+				yRotation += 180;
 			}
-			transform.rotation = Quaternion.Euler (0, yRotation, 0);
+
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler (0, yRotation, 0), 5.0f * Time.deltaTime);
 			transform.position = player.position;
 		}
 	}

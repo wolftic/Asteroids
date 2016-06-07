@@ -2438,8 +2438,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 41347269}
   m_HandleRect: {fileID: 41347268}
   m_Direction: 2
-  m_Value: 0.9999998
-  m_Size: 0.57777774
+  m_Value: 1
+  m_Size: 0.65416664
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5108,7 +5108,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1771737260}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.427
+  m_Size: 0.771
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10755,8 +10755,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 503399887}
   m_HandleRect: {fileID: 503399886}
   m_Direction: 2
-  m_Value: 0.9999998
-  m_Size: 0.52
+  m_Value: 1
+  m_Size: 0.58875
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12621,9 +12621,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Foreground
-
-'
+  m_Text: Foreground
 --- !u!222 &2073432462
 CanvasRenderer:
   m_ObjectHideFlags: 0

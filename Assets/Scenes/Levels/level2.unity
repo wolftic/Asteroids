@@ -197,9 +197,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1644331244}
-  offset: {x: -5, y: 3, z: -5}
+  offset: {x: 0, y: 3, z: -5}
   left: 113
   right: 101
+  BackCam: 0
   ySpeed: 150
 --- !u!4 &191489883
 Transform:
@@ -1598,7 +1599,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1852633083}
-  m_LocalRotation: {x: 0.14771098, y: 0.37776074, z: -0.061183896, w: 0.911995}
+  m_LocalRotation: {x: 0.15988122, y: 0, z: 0, w: 0.9871363}
   m_LocalPosition: {x: -1.003963, y: 0.11832571, z: -4.4060307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
