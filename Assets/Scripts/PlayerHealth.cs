@@ -24,10 +24,11 @@ public class PlayerHealth : MonoBehaviour
 
 		healthBar.fillAmount = Health / 100;
 
-		if(Health <= 100){
-			Destroy (this);
+		if (gameObject) {
+			if (Health <= 0) {
+				Destroy (gameObject);
+			}
 		}
-
 	}
 
 
