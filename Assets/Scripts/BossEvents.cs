@@ -7,7 +7,7 @@ public class BossEvents : MonoBehaviour {
 	private GameObject ren;
 	[SerializeField]
 	private GameObject[] visible;
-	private int bossAlpha = 0.1
+	private float bossAlpha = 0.1f;
 
 	void Start(){
 		blindCanvas.enabled = false;
@@ -69,7 +69,7 @@ public class BossEvents : MonoBehaviour {
 		for (int i = 0; i < visible.Length; i++) {
 			//visible [i].GetComponent <SpriteRenderer> ().enabled = false;
 			Color alphaChange = visible[i].GetComponent <SpriteRenderer>().color;
-			alphaChange = new Color(alphaChange.r, alphaChange.g, alphaChange.b, 0.1f)
+			alphaChange = new Color (alphaChange.r, alphaChange.g, alphaChange.b, 0.1f);
 		}
 	}
 
