@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour {
 
 	Rigidbody rigidbody;
 
-
 	void Start () {
 		rigidbody = GetComponent<Rigidbody> ();
 		rigidbody.constraints = RigidbodyConstraints.FreezePositionY;

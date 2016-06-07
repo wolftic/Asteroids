@@ -42,6 +42,7 @@ public class GameOverScript : MonoBehaviour {
 	}
 
 	public void RestartGame(){
-		
+
+
 	}
 }

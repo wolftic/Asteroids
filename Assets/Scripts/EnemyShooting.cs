@@ -63,5 +63,4 @@ public class EnemyShooting : MonoBehaviour
 		bullets = 20;
 		nextFire = Time.time + reloadTime;
 	}
-
 }

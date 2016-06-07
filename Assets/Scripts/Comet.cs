@@ -45,4 +45,3 @@ public class Comet : MonoBehaviour {
 		PoolingScript.current.Destroy (gameObject);
 	}
 }
-

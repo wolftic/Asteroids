@@ -10,7 +10,6 @@ public class EnemyMovement : MonoBehaviour {
 	public float maxSpeed;
 	public float RANGE;
 	public float SEERANGE;
-
 	public bool inRange;
 
 	private GameObject[] players;
@@ -84,6 +83,7 @@ public class EnemyMovement : MonoBehaviour {
 		} else {
 			inRange = false;
 		}
+
 
 		if (!inRange) {
 			if (thrusters != null) {

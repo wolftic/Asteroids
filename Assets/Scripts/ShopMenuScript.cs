@@ -15,7 +15,6 @@ public class ShopMenuScript : MonoBehaviour {
 			Instantiate (playerInventory);
 		}
 	}
-
 	void Awake () {
 	
 		buyMenu = buyMenu.GetComponent <Canvas> ();

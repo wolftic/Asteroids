@@ -49,7 +49,6 @@ public class MainMenu : MonoBehaviour {
 	{
 		SceneManager.LoadScene (scene);
 	}
-
 	public void OptionMenu()
 	{
 		startMenu.enabled = false;

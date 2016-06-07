@@ -13,7 +13,6 @@ public class PoolingScript : MonoBehaviour {
 	private bool willGrow = true;
 	//[HideInInspector]
 	//public GameObject bulletsAndComets;
-
 	List<List<GameObject>> pooledObjects;
 
 	void Awake(){
@@ -66,4 +65,3 @@ public class PoolingScript : MonoBehaviour {
 		obj.SetActive (false);
 	}
 }
-

@@ -64,5 +64,4 @@ public class PlayerShooting : MonoBehaviour
 		bullets = 12;
 		nextFire = Time.time + reloadTime;
 	}
-
 }

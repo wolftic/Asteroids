@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
 
 	}
 
+
 	private void Regeneration()
 	{
 		Health++;
