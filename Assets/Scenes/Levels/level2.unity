@@ -1487,6 +1487,7 @@ MonoBehaviour:
   - {fileID: 104962, guid: c792e93f97bf4ac4ea4e2e0b305a688b, type: 2}
   - {fileID: 145292, guid: dd108393c34293a42b4f12f1009499ce, type: 2}
   - {fileID: 165424, guid: e228996f613c117469b754ad7c9344b7, type: 2}
+  - {fileID: 177530, guid: c6835c58616156143b45c3ebb82ead00, type: 2}
   pooledAmount: 20
   willGrow: 1
 --- !u!4 &2054575551
