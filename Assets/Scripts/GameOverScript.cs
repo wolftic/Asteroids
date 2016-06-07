@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour {
 
@@ -24,8 +25,6 @@ public class GameOverScript : MonoBehaviour {
 
 	void Update(){
 		if (playerHealth.Health <= 0 && !playerdying) {
-			Debug.Log ("die");
-			player.SetActive (false);
 			playerdying = true;
 			GameOverFadeIn ();
 
@@ -41,8 +40,11 @@ public class GameOverScript : MonoBehaviour {
 		gameOverCanvas.enabled = true;
 	}
 
-	public void RestartGame(){
+	public void RestartGame(string scene){
+		SceneManager.LoadScene (scene);
+	}
 
-
+	public void ExitGame(){
+		SceneManager.LoadScene ("MainMenu");
 	}
 }

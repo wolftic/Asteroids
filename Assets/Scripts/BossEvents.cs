@@ -67,9 +67,7 @@ public class BossEvents : MonoBehaviour {
 	{
 		Debug.Log ("invis");
 		for (int i = 0; i < visible.Length; i++) {
-			//visible [i].GetComponent <SpriteRenderer> ().enabled = false;
-			Color alphaChange = visible[i].GetComponent <SpriteRenderer>().color;
-			alphaChange = new Color (alphaChange.r, alphaChange.g, alphaChange.b, 0.1f);
+			visible [i].GetComponent <SpriteRenderer> ().enabled = false;
 		}
 	}
 
