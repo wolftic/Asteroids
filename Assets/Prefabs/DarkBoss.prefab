@@ -119,10 +119,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400850}
   - 54: {fileID: 5489332}
-  - 114: {fileID: 11485212}
   - 65: {fileID: 6526910}
-  - 114: {fileID: 11458726}
-  - 114: {fileID: 11495154}
+  - 114: {fileID: 11483284}
+  - 114: {fileID: 11418070}
   m_Layer: 0
   m_Name: DarkBoss
   m_TagString: Enemy
@@ -364,7 +363,7 @@ TrailRenderer:
       rgba: 16777215
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &11458726
+--- !u!114 &11418070
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -372,46 +371,75 @@ MonoBehaviour:
   m_GameObject: {fileID: 183382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cf6ba1eec4a58d4994538dfd3898de8, type: 3}
+  m_Script: {fileID: 11500000, guid: 67aa443536a43414a92dda90836a66d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blindCanvas: {fileID: 0}
+  visible:
+  - {fileID: 164554}
+  - {fileID: 197428}
+  - {fileID: 147216}
+--- !u!114 &11483284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e021d6a9fe80941ad5eb7d2a5e1bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
---- !u!114 &11485212
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22e482b9ef6ffac42ad573374cf3e52b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrusters:
-  - {fileID: 19806040}
-  target: {fileID: 0}
-  maxSpeed: 30
-  RANGE: 23
-  SEERANGE: 500000000
-  inRange: 0
---- !u!114 &11495154
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b597267291f60a4fa14772c1dd1b274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 11482214, guid: c6835c58616156143b45c3ebb82ead00, type: 2}
-  muzzle: {fileID: 427918}
-  shootDelay: 1
-  bulletSpeed: 5
-  fireRate: 1
-  shotSound1: {fileID: 0}
-  shotSound2: {fileID: 0}
+  Range: 50
+  AbilityCooldown: 5
+  speed: 0
+  bullet: {fileID: 0}
+  specialBullet: {fileID: 0}
+  minion: {fileID: 0}
+  muzzle: {fileID: 0}
+  icon: {fileID: 21295452, guid: c8fa206bac8ca064782370983f949886, type: 2}
+  Attacks:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11418070}
+        m_MethodName: Invisible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnInRange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnOutOfRange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSpawn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!198 &19806040
 ParticleSystem:
   m_ObjectHideFlags: 1
