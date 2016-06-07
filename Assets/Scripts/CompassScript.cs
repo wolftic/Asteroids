@@ -9,7 +9,7 @@ public class CompassScript : MonoBehaviour {
 	public List<Point> points = new List<Point>();
 
 	[SerializeField]
-	private SpriteRenderer prefab;
+	private SpriteRenderer[] prefab;
 
 	public struct Point {
 		public string name;
@@ -40,7 +40,7 @@ public class CompassScript : MonoBehaviour {
 
 	void Start () {
 		//AddPoint ("Shop", Vector3.forward * 5, Color.blue, prefab);
-		nullPoint = new Point("null", gameObject, Color.black, prefab);
+		nullPoint = new Point("null", gameObject, Color.black, prefab[0]);
 	}
 
 	void Update () {
@@ -67,12 +67,12 @@ public class CompassScript : MonoBehaviour {
 		}
 	}
 
-	public void AddPoint(string name, GameObject target, Color color, SpriteRenderer prefab) {
-		points.Add (new Point (name, target, color, prefab));
+	public void AddPoint(string name, GameObject target, Color color, SpriteRenderer _prefab) {
+		points.Add (new Point (name, target, color, _prefab));
 	}
 
 	public void AddPoint(string name, GameObject target, Color color) {
-		AddPoint (name, target, color, prefab);
+		AddPoint (name, target, color, prefab[0]);
 	}
 
 	public Point GetPoint(GameObject target) {
