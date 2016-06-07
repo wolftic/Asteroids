@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b597267291f60a4fa14772c1dd1b274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 11482214, guid: c6835c58616156143b45c3ebb82ead00, type: 2}
+  projectile: {fileID: 11414776, guid: c792e93f97bf4ac4ea4e2e0b305a688b, type: 2}
   muzzle: {fileID: 447296}
   shootDelay: 1
   bulletSpeed: 5
@@ -1978,7 +1978,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ddfce8f2a51a1764689dfffdb59d4d6b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1deea38c73ec51e4eb0bfb86c0ccded0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2008,7 +2008,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ddfce8f2a51a1764689dfffdb59d4d6b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1deea38c73ec51e4eb0bfb86c0ccded0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2038,7 +2038,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ddfce8f2a51a1764689dfffdb59d4d6b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1deea38c73ec51e4eb0bfb86c0ccded0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

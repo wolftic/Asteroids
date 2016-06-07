@@ -13,6 +13,8 @@ public class Boss : MonoBehaviour {
 	public Bullet specialBullet;
 	public GameObject minion;
 	public Transform muzzle;
+	[SerializeField]
+	private SpriteRenderer icon;
 		
 	[Header("Attacks")]
 	public UnityEvent[] Attacks = new UnityEvent[1];
@@ -30,8 +32,10 @@ public class Boss : MonoBehaviour {
 	private StatusEffect.StatusType statusType;
 	private float cooldown;
 
+
 	void Start () {
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
+		GameObject.FindGameObjectWithTag ("Camera").GetComponent<CompassScript> ().AddPoint ("Comet", gameObject, Color.white, icon);
 
 		Alive = true;
 		statusType = StatusEffect.StatusType.NONE;

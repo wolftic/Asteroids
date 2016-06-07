@@ -374,6 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67aa443536a43414a92dda90836a66d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blindCanvas: {fileID: 0}
+  visible: []
 --- !u!114 &11455204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -391,8 +393,9 @@ MonoBehaviour:
   speed: 2.5
   bullet: {fileID: 11422022, guid: dd108393c34293a42b4f12f1009499ce, type: 2}
   specialBullet: {fileID: 11414776, guid: c792e93f97bf4ac4ea4e2e0b305a688b, type: 2}
-  minion: {fileID: 0}
-  muzzle: {fileID: 0}
+  minion: {fileID: 113620}
+  muzzle: {fileID: 423918}
+  icon: {fileID: 21295452, guid: c8fa206bac8ca064782370983f949886, type: 2}
   Attacks:
   - m_PersistentCalls:
       m_Calls:
