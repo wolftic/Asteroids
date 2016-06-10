@@ -4,6 +4,10 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 	public float maxSpeed = 30.0f;
 	float xSpeed;
+	[HideInInspector]
+	public bool frozen;
+	[HideInInspector]
+	public bool reversed;
 
 	Vector3 movement;
 	public ParticleSystem[] thrusters;

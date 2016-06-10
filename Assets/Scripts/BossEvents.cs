@@ -11,6 +11,7 @@ public class BossEvents : MonoBehaviour {
 	private Transform player;
 	private float bossAlpha = 0.1f;
 
+
 	void Start(){
 		blindCanvas.enabled = false;
 		boss = GetComponent <Boss> ();

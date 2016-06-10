@@ -569,6 +569,10 @@ Prefab:
       propertyPath: blindCanvas
       value: 
       objectReference: {fileID: 2015339722}
+    - target: {fileID: 11418070, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097270571}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
   m_IsPrefabParent: 0
