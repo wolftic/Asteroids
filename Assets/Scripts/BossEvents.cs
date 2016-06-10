@@ -10,9 +10,11 @@ public class BossEvents : MonoBehaviour {
 	[SerializeField]
 	private Transform player;
 	private float bossAlpha = 0.1f;
+	private Movement movement;
 
 
 	void Start(){
+		movement = player.GetComponent <Movement> ();
 		blindCanvas.enabled = false;
 		boss = GetComponent <Boss> ();
 	}
@@ -56,7 +58,12 @@ public class BossEvents : MonoBehaviour {
 	//Ice power ups
 	public void Freeze()
 	{
+		movement.frozen = true;
+		Invoke ("Unfreeze",2);
+	}
 
+	private void Unfreeze(){
+		movement.frozen = false;
 	}
 
 	//Dessert power ups
@@ -69,13 +76,14 @@ public class BossEvents : MonoBehaviour {
 	public void Invisible()
 	{
 		Debug.Log ("invis");
-		for (int i = 0; i < visible.Length; i++) {
+		for (int i = 0; i < visible.Length; i++) 
+		{
 			visible [i].GetComponent <SpriteRenderer> ().enabled = false;
 			Invoke ("VisibleBoss", 2);
 		}
 	}
 
-	public void VisibleBoss()
+	private void VisibleBoss()
 	{
 		for (int i = 0; i < visible.Length; i++) {
 			visible [i].GetComponent <SpriteRenderer> ().enabled = true;
@@ -91,7 +99,13 @@ public class BossEvents : MonoBehaviour {
 	//Jungle power ups
 	public void Reversed()
 	{
+		movement.reversed = true;
+		Invoke ("Unreversed", 3);
+		Debug.Log ("reverse");
+	}
 
+	private void Unreversed(){
+		movement.reversed = false;
 	}
 
 	//Dark power ups

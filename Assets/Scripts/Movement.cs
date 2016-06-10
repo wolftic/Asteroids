@@ -40,7 +40,14 @@ public class Movement : MonoBehaviour {
 		}
 
 		float horizontal = IH.GetAxis("horizontal");
-
+		if (reversed) {
+			horizontal = -horizontal;
+			xSpeed = -xSpeed;
+		}
+		if(frozen){
+			horizontal = 0;
+			xSpeed = 0;
+		}
 		newRot = Quaternion.Euler(-horizontal * 30.0f * Vector3.forward);;
 
 		transform.Translate (Vector3.forward * Time.deltaTime * xSpeed);
