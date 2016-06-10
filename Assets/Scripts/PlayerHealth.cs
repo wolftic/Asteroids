@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
 	private Image healthBar;
 	private float regenDelay = 1.0F;
 	private float regenTime = 0.0F;
+	public bool poisoned = false;
 
 	public void doDamage(float damage) 
 	{
@@ -20,6 +21,10 @@ public class PlayerHealth : MonoBehaviour
 		if(Time.time > regenTime && Health < 100)
 		{
 			Regeneration ();
+		}
+
+		if (poisoned) {
+			
 		}
 
 		healthBar.fillAmount = Health / 100;

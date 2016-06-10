@@ -11,10 +11,12 @@ public class BossEvents : MonoBehaviour {
 	private Transform player;
 	private float bossAlpha = 0.1f;
 	private Movement movement;
+	private PlayerHealth playerHealth;
 
 
 	void Start(){
 		movement = player.GetComponent <Movement> ();
+		playerHealth = player.GetComponent <PlayerHealth> ();
 		blindCanvas.enabled = false;
 		boss = GetComponent <Boss> ();
 	}
@@ -75,7 +77,6 @@ public class BossEvents : MonoBehaviour {
 	//Dessert power ups
 	public void Invisible()
 	{
-		Debug.Log ("invis");
 		for (int i = 0; i < visible.Length; i++) 
 		{
 			visible [i].GetComponent <SpriteRenderer> ().enabled = false;
@@ -93,7 +94,14 @@ public class BossEvents : MonoBehaviour {
 	//Jungle power ups
 	public void Poison()
 	{
+		if (playerHealth.poisoned == false) {
+			playerHealth.poisoned = true;
+			Invoke ("PoisonHeal", 10);
+		}
+	}
 
+	private void PoisonHeal(){
+		playerHealth.poisoned = false;
 	}
 
 	//Jungle power ups
