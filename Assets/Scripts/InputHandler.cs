@@ -18,6 +18,7 @@ public class InputHandler : MonoBehaviour {
 		inputs.Add ("leftKnop", KeyCode.A);
 		inputs.Add ("breakKnop", KeyCode.S);
 		inputs.Add ("rightKnop", KeyCode.D);
+		inputs.Add ("watchBehindKnop", KeyCode.LeftShift);
 	}
 		
 	public void ChangeKey(string key){

@@ -7,6 +7,8 @@ public class BossEvents : MonoBehaviour {
 	private GameObject ren;
 	[SerializeField]
 	private GameObject[] visible;
+	[SerializeField]
+	private Transform player;
 	private float bossAlpha = 0.1f;
 
 	void Start(){
@@ -47,7 +49,7 @@ public class BossEvents : MonoBehaviour {
 	//Ice power ups
 	public void IceShot()
 	{
-
+		
 	}
 
 	//Ice power ups
@@ -68,6 +70,14 @@ public class BossEvents : MonoBehaviour {
 		Debug.Log ("invis");
 		for (int i = 0; i < visible.Length; i++) {
 			visible [i].GetComponent <SpriteRenderer> ().enabled = false;
+			Invoke ("VisibleBoss", 2);
+		}
+	}
+
+	public void VisibleBoss()
+	{
+		for (int i = 0; i < visible.Length; i++) {
+			visible [i].GetComponent <SpriteRenderer> ().enabled = true;
 		}
 	}
 

@@ -43,6 +43,9 @@ public class Boss : MonoBehaviour {
 	}
 
 	void Update () {
+		if (!target)
+			return;
+		
 		if (Vector3.Distance (transform.position, target.position) <= Range) {
 			if (!inRange) {
 				inRange = true;

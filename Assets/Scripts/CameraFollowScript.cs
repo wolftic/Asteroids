@@ -31,9 +31,7 @@ public class CameraFollowScript : MonoBehaviour {
 			}*/
 			yRotation = player.eulerAngles.y;
 
-			Debug.Log (yRotation);
-
-			if (BackCam) {
+			if (Input.GetKey(inputHandler.inputs["watchBehindKnop"])) {
 				yRotation += 180;
 			}
 
