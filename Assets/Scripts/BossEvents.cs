@@ -12,6 +12,13 @@ public class BossEvents : MonoBehaviour {
 	private float bossAlpha = 0.1f;
 	private Movement movement;
 	private PlayerHealth playerHealth;
+	[SerializeField]
+	private Bullet thunderBolt;
+	[SerializeField]
+	private Bullet iceBullet;
+	[SerializeField]
+	private Bullet[] needle;
+
 
 
 	void Start(){
@@ -54,7 +61,9 @@ public class BossEvents : MonoBehaviour {
 	//Ice power ups
 	public void IceShot()
 	{
-		
+		Instantiate (iceBullet, transform.position, transform.rotation);
+		iceBullet.transform.rotation = boss.muzzle.rotation;
+		iceBullet.transform.position = boss.muzzle.position;
 	}
 
 	//Ice power ups
@@ -71,6 +80,11 @@ public class BossEvents : MonoBehaviour {
 	//Dessert power ups
 	public void NeedleRain()
 	{
+		for (int i = 0; i < 7; i++) {
+			Instantiate (needle[i], transform.position, transform.rotation);
+			needle[i].transform.rotation = boss.muzzle.rotation;
+			needle[i].transform.position = boss.muzzle.position;
+		}
 
 	}
 
@@ -96,11 +110,10 @@ public class BossEvents : MonoBehaviour {
 	{
 		if (playerHealth.poisoned == false) {
 			playerHealth.poisoned = true;
-			Invoke ("PoisonHeal", 10);
 		}
 	}
 
-	private void PoisonHeal(){
+	public void PoisonHeal(){
 		playerHealth.poisoned = false;
 	}
 
@@ -117,9 +130,12 @@ public class BossEvents : MonoBehaviour {
 	}
 
 	//Dark power ups
+	//klein donderschot die 70 damage op de player doet als het raakt.
 	public void Thunder()
 	{
-
+		Instantiate (thunderBolt, transform.position, transform.rotation);
+		thunderBolt.transform.rotation = boss.muzzle.rotation;
+		thunderBolt.transform.position = boss.muzzle.position;
 	}
 
 	//Dark power ups
