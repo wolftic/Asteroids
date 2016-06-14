@@ -5,8 +5,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour 
 {
 	public float Health;
-	[SerializeField]
-	private Image healthBar;
+	public Image healthBar;
 	private float regenDelay = 1.0F;
 	private float regenTime = 0.0F;
 	public bool poisoned = false;
