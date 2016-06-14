@@ -13,6 +13,8 @@ public class Boss : MonoBehaviour {
 	public Bullet specialBullet;
 	public GameObject minion;
 	public Transform muzzle;
+	public Transform muzzle2;
+	public Transform muzzle3;
 	[SerializeField]
 	private SpriteRenderer icon;
 		

@@ -48,7 +48,6 @@ public class EnemyMovement : MonoBehaviour {
 				Quaternion _rot = Quaternion.LookRotation (_dir / 2);
 
 				newRot = _rot;
-				Debug.Log (newRot);
 			}
 		}
 

@@ -380,7 +380,7 @@ MonoBehaviour:
   target: {fileID: 0}
   maxSpeed: 30
   RANGE: 23
-  SEERANGE: 500000000
+  SEERANGE: 60
   inRange: 0
 --- !u!114 &11455340
 MonoBehaviour:
