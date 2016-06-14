@@ -533,13 +533,25 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11418070, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: needle.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
       propertyPath: Attacks.Array.size
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnInRange.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnOutOfRange.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
       propertyPath: Attacks.Array.data[1].m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
       propertyPath: Attacks.Array.data[2].m_PersistentCalls.m_Calls.Array.size
@@ -587,7 +599,7 @@ Prefab:
       objectReference: {fileID: 2097270571}
     - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
       propertyPath: Attacks.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Reversed
+      value: NeedleRain
       objectReference: {fileID: 0}
     - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
       propertyPath: AbilityCooldown
@@ -608,7 +620,7 @@ Prefab:
       objectReference: {fileID: 1371831229}
     - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
       propertyPath: Attacks.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Freeze
+      value: Poison
       objectReference: {fileID: 0}
     - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
       propertyPath: Attacks.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -656,6 +668,73 @@ Prefab:
       propertyPath: muzzle
       value: 
       objectReference: {fileID: 2024022622}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnInRange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnInRange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnOutOfRange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnOutOfRange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnInRange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1371831229}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnInRange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Poison
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnInRange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnOutOfRange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1371831229}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnOutOfRange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PoisonHeal
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: OnOutOfRange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418070, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: thunderBolt
+      value: 
+      objectReference: {fileID: 11431084, guid: 3dd17eea587591849b57e441f04411e3,
+        type: 2}
+    - target: {fileID: 427918, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 427918, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 427918, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.30099985
+      objectReference: {fileID: 0}
+    - target: {fileID: 11418070, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: iceBullet
+      value: 
+      objectReference: {fileID: 11475330, guid: 6e461274bc8b5d24cadd1b3c45e20573,
+        type: 2}
+    - target: {fileID: 11418070, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
+      propertyPath: needle.Array.data[0]
+      value: 
+      objectReference: {fileID: 11431084, guid: 3dd17eea587591849b57e441f04411e3,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
   m_IsPrefabParent: 0

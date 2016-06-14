@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
 	private float regenDelay = 1.0F;
 	private float regenTime = 0.0F;
 	public bool poisoned = false;
+	private bool invokingPoison = false;
 
 	public void doDamage(float damage) 
 	{
@@ -23,8 +24,9 @@ public class PlayerHealth : MonoBehaviour
 			Regeneration ();
 		}
 
-		if (poisoned) {
-			
+		if(poisoned && invokingPoison == false){
+			InvokeRepeating ("Poisoning", 1, 1);
+			invokingPoison = true;
 		}
 
 		healthBar.fillAmount = Health / 100;
@@ -36,6 +38,14 @@ public class PlayerHealth : MonoBehaviour
 		}
 	}
 
+	private void Poisoning(){
+		Debug.Log (poisoned);
+		if(poisoned == false){
+			invokingPoison = false;
+			CancelInvoke ();
+		}
+		Health -= 3;
+	}
 
 	private void Regeneration()
 	{

@@ -29,6 +29,7 @@ TagManager:
   - Buyknop9
   - Camera
   - Compass
+  - Thunder
   layers:
   - Default
   - TransparentFX
