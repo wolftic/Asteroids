@@ -33,6 +33,12 @@ public class Bullet : MonoBehaviour {
 			other.transform.GetComponent<EnemyHealth> ().doDamage (Damage);
 			DestroyFunction ();
 		}
+
+		if (other.transform.tag == "Boss") {
+			other.transform.GetComponent<EnemyHealth> ().doDamage (Damage);
+			DestroyFunction ();
+		}
+
 		if(other.transform.tag == "Comet")
 		{
 			DestroyFunction ();

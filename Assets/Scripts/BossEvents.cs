@@ -17,7 +17,11 @@ public class BossEvents : MonoBehaviour {
 	[SerializeField]
 	private Bullet iceBullet;
 	[SerializeField]
-	private Bullet[] needle;
+	private Bullet needle;
+	[SerializeField]
+	private Canvas frozenCanvas;
+	[SerializeField]
+	private Canvas poisonCanvas;
 
 
 
@@ -25,6 +29,8 @@ public class BossEvents : MonoBehaviour {
 		movement = player.GetComponent <Movement> ();
 		playerHealth = player.GetComponent <PlayerHealth> ();
 		blindCanvas.enabled = false;
+		frozenCanvas.enabled = false;
+		poisonCanvas.enabled = false;
 		boss = GetComponent <Boss> ();
 	}
 
@@ -61,20 +67,27 @@ public class BossEvents : MonoBehaviour {
 	//Ice power ups
 	public void IceShot()
 	{
-		Instantiate (iceBullet, transform.position, transform.rotation);
-		iceBullet.transform.rotation = boss.muzzle.rotation;
-		iceBullet.transform.position = boss.muzzle.position;
+		GameObject obj = PoolingScript.current.GetPooledObject (iceBullet.gameObject);
+
+		if (obj == null)
+			return;
+
+		obj.transform.position = transform.position;
+		obj.transform.rotation = boss.muzzle.rotation;
+		obj.SetActive (true);
 	}
 
 	//Ice power ups
 	public void Freeze()
 	{
 		movement.frozen = true;
+		frozenCanvas.enabled = true;
 		Invoke ("Unfreeze",2);
 	}
 
 	private void Unfreeze(){
 		movement.frozen = false;
+		frozenCanvas.enabled = false;
 	}
 
 	//Dessert power ups
@@ -82,20 +95,24 @@ public class BossEvents : MonoBehaviour {
 	public void NeedleRain()
 	{
 		for (int i = 0; i < 7; i++) {
-			/*Invoke ("NeedleShot",1);
-			Instantiate (needle[i], transform.position, transform.rotation);
-			needle[i].transform.rotation = boss.muzzle.rotation;
-			needle[i].transform.position = boss.muzzle.position;*/
-
 			NeedleShot ();
 		}
 
 	}
 
 	private void NeedleShot(){
-		
+
+		GameObject obj = PoolingScript.current.GetPooledObject (needle.gameObject);
 		Vector3 spawnPosition = boss.muzzle.forward + boss.muzzle.right.normalized * Random.Range (-1, 1);
-		Instantiate (boss.specialBullet, spawnPosition, boss.muzzle.rotation);
+
+		if (obj == null)
+			return;
+		
+		obj.transform.position = spawnPosition;
+		obj.transform.rotation = boss.muzzle.rotation;
+		obj.SetActive (true);
+
+		//Instantiate (boss.specialBullet, spawnPosition, boss.muzzle.rotation);
 	}
 
 	//Dessert power ups

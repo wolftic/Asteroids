@@ -30,6 +30,7 @@ TagManager:
   - Camera
   - Compass
   - Thunder
+  - Boss
   layers:
   - Default
   - TransparentFX
