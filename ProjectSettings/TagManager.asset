@@ -30,6 +30,10 @@ TagManager:
   - Camera
   - Compass
   - Thunder
+  - Planet1
+  - Planet2
+  - Planet3
+  - Planet4
   layers:
   - Default
   - TransparentFX
