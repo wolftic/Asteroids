@@ -735,6 +735,7 @@ Prefab:
       value: 
       objectReference: {fileID: 11431084, guid: 3dd17eea587591849b57e441f04411e3,
         type: 2}
+<<<<<<< HEAD
     - target: {fileID: 11483284, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
       propertyPath: specialBullet
       value: 
@@ -752,6 +753,8 @@ Prefab:
       propertyPath: muzzle3
       value: 
       objectReference: {fileID: 1961691040}
+=======
+>>>>>>> origin/master
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 236c306b054cfa14cbb91a1ed6bc10d8, type: 2}
   m_IsPrefabParent: 0
