@@ -82,19 +82,19 @@ public class BossEvents : MonoBehaviour {
 	public void NeedleRain()
 	{
 		for (int i = 0; i < 7; i++) {
-			Invoke ("NeedleShot",1);
+			/*Invoke ("NeedleShot",1);
 			Instantiate (needle[i], transform.position, transform.rotation);
 			needle[i].transform.rotation = boss.muzzle.rotation;
-			needle[i].transform.position = boss.muzzle.position;
+			needle[i].transform.position = boss.muzzle.position;*/
+
+			NeedleShot ();
 		}
 
 	}
 
 	private void NeedleShot(){
 		
-		Vector3 spawnPosition = new Vector3 (boss.muzzle.position.x + Random.Range (-1, 1),
-			boss.muzzle.position.y,
-			boss.muzzle.position.z);
+		Vector3 spawnPosition = boss.muzzle.forward + boss.muzzle.right.normalized * Random.Range (-1, 1);
 		Instantiate (boss.specialBullet, spawnPosition, boss.muzzle.rotation);
 	}
 

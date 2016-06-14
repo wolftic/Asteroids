@@ -7,8 +7,8 @@ public class PoolingScript : MonoBehaviour {
 	public static PoolingScript current;
 	[SerializeField]
 	private GameObject[] pooledObject;
-	[SerializeField]
-	private int pooledAmount = 30;
+	private int pooledAmount = 10;
+	private int specialPooledAmount = 2;
 	[SerializeField]
 	private bool willGrow = true;
 	//[HideInInspector]
@@ -22,17 +22,23 @@ public class PoolingScript : MonoBehaviour {
 
 	void Start(){
 		pooledObjects = new List<List<GameObject>> ();
-		for (int x = 0; x < pooledObject.Length; x++){
-
-			pooledObjects.Add (new List<GameObject>());
-			Debug.Log ("Made list of GameObject: " + pooledObject[x]);
-
-			for (int i = 0; i < pooledAmount; i++) {
-				GameObject obj = (GameObject)Instantiate (pooledObject[x]);
-				obj.SetActive (false);
-				//obj.transform.SetParent (bulletsAndComets.transform);
-				pooledObjects[x].Add (obj);
-
+		for (int x = 0; x < pooledObject.Length; x++) {
+			pooledObjects.Add (new List<GameObject> ());
+			Debug.Log ("Made list of GameObject: " + pooledObject [x]);
+			if (x > 2) {
+				for (int i = 0; i < pooledAmount; i++) {
+					GameObject obj = (GameObject)Instantiate (pooledObject [x]);
+					obj.SetActive (false);
+					//obj.transform.SetParent (bulletsAndComets.transform);
+					pooledObjects [x].Add (obj);
+				}
+			} else {
+				for (int i = 0; i < specialPooledAmount; i++) {
+					GameObject obj = (GameObject)Instantiate (pooledObject [x]);
+					obj.SetActive (false);
+					//obj.transform.SetParent (bulletsAndComets.transform);
+					pooledObjects [x].Add (obj);
+				}
 			}
 		}
 	}
