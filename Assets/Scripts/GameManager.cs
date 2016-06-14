@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 		planets[1] = GameObject.FindGameObjectWithTag ("Planet2");
 		planets[2] = GameObject.FindGameObjectWithTag ("Planet3");
 		planets[3] = GameObject.FindGameObjectWithTag ("Planet4");
-	}
+	} 
 
 	void Update () {
 		for (int i = 0; i < planets.Length; i++) {
