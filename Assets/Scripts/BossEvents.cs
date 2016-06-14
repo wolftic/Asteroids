@@ -82,13 +82,10 @@ public class BossEvents : MonoBehaviour {
 	public void NeedleRain()
 	{
 		for (int i = 0; i < 7; i++) {
-<<<<<<< HEAD
 			Invoke ("NeedleShot",1);
-=======
 			Instantiate (needle[i], transform.position, transform.rotation);
 			needle[i].transform.rotation = boss.muzzle.rotation;
 			needle[i].transform.position = boss.muzzle.position;
->>>>>>> origin/master
 		}
 
 	}
@@ -163,8 +160,6 @@ public class BossEvents : MonoBehaviour {
 	{
 
 	}
-
-
 
 	private void BlindFix(){
 		blindCanvas.enabled = true;

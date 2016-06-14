@@ -79,7 +79,6 @@ public class InputHandler : MonoBehaviour {
 		int e = System.Enum.GetNames (typeof(KeyCode)).Length;
 		for (int i = 0; i < e; i++) {
 			if (Input.GetKey ((KeyCode)i)) {
-				Debug.Log ((KeyCode)i);
 				return (KeyCode)i;
 			}
 		}
