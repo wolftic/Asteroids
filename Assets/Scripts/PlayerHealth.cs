@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
 	public void doDamage(float damage) 
 	{
 		Health -= damage;
+		Debug.Log (Camera.main);
+		Camera.main.transform.GetComponent<CameraShake> ().ShakeCamera (10f, .5f);
 	}
 
 	void Update()
@@ -32,8 +34,10 @@ public class PlayerHealth : MonoBehaviour
 
 		if (gameObject) {
 			if (Health <= 0) {
+				GameObject explosion = Instantiate (Resources.Load ("FX_Particle", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject; 
+				Destroy (explosion, 4.9f);
 				Destroy (gameObject);
-			}
+			}	
 		}
 	}
 

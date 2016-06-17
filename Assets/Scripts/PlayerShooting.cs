@@ -13,9 +13,7 @@ public class PlayerShooting : MonoBehaviour
 	[SerializeField]
 	private Image ammoBar;
 	[SerializeField]
-	private AudioClip shotSound1;
-	[SerializeField]
-	private AudioClip shotSound2;
+	private string ShootSound;
 
 	private float nextFire = 0.0F;
 	private float bullets = 12;
@@ -57,6 +55,8 @@ public class PlayerShooting : MonoBehaviour
 
 		bullets -= 1;
 		nextFire = Time.time + fireRate;
+		SoundManager.current.PlaySound (ShootSound);
+
 	}
 
 	private void Reload()

@@ -44,6 +44,8 @@ public class Bullet : MonoBehaviour {
 			DestroyFunction ();
 			other.gameObject.GetComponent <Comet> ().split();
 		}
+
+		SoundManager.current.PlaySound ("Explosie");
 	}
 
 	void DestroyFunction(){

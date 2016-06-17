@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour {
 	{
 		if(Health <= 0)
 		{
+			GameObject explosion = Instantiate (Resources.Load ("FX_Particle", typeof(GameObject)), transform.position, Quaternion.identity) as GameObject; 
+			Destroy (explosion, 4.9f);
 			Destroy (gameObject);
 		}
 	}

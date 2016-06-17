@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf05fb35faeadbb449d39c49e39b7460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUnlocked: 0
+  levelUnlocked: 1
 --- !u!1 &337521800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,7 +2667,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 41347268}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.7111111
+  m_Size: 0.7291667
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5740,7 +5740,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1771737260}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.7033333
+  m_Size: 0.7225
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7276,7 +7276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMvolume: 1
-  SFXvolume: 1
+  SFXvolume: 0.01
   sounds:
   - {fileID: 8300000, guid: 8682fc61ab77b1846b7eabedfa0dc477, type: 3}
   - {fileID: 8300000, guid: 63ba1004db61e024fb56614bbb24a01f, type: 3}
@@ -12133,7 +12133,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 503399886}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.64
+  m_Size: 0.65624994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

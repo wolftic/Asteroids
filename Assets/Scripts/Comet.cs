@@ -6,6 +6,8 @@ public class Comet : MonoBehaviour {
 	private CometSpawner cometSpawner;
 	[SerializeField]
 	private SpriteRenderer icon;
+	[SerializeField]
+	private float damage;
 
 	void Start () {
 		cometSpawner = GameObject.Find ("CometSpawner").GetComponent <CometSpawner> ();
@@ -26,11 +28,11 @@ public class Comet : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Player") {
-			other.GetComponent<PlayerHealth> ().doDamage (25f);
+			other.GetComponent<PlayerHealth> ().doDamage (damage);
 			split ();
 		}
 		if (other.tag == "Enemy") {
-			other.GetComponent<EnemyHealth> ().doDamage (25f);
+			other.GetComponent<EnemyHealth> ().doDamage (damage);
 			split ();
 		}
 	}
@@ -44,6 +46,11 @@ public class Comet : MonoBehaviour {
 				cometSpawner.SpawnComet(transform.position, rot, scale);
 			}
 		}
+
+		GameObject explosion = Instantiate (Resources.Load ("FX_Bolletjes_trail 1", typeof(GameObject))) as GameObject; 
+		explosion.transform.position = transform.position;
+		Destroy (explosion, 9f);
+
 		PoolingScript.current.Destroy (gameObject);
 	}
 }

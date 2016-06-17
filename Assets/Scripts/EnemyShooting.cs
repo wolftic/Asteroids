@@ -9,14 +9,16 @@ public class EnemyShooting : MonoBehaviour
 	public float shootDelay;
 	public float bulletSpeed;
 	public float fireRate = 0.4F;
-	public AudioClip shotSound1;
-	public AudioClip shotSound2;
+	[SerializeField]
+	private string ShootSound;
 
 	private float nextFire = 0.0F;
 	private float bullets = 20;
 	private float reloadTime = 1.8F;
 	private EnemyMovement enemyMovement;
 	private InputHandler inputHandler;
+	[SerializeField]
+	private float damage;
 
 	void Awake()
 	{
@@ -54,8 +56,10 @@ public class EnemyShooting : MonoBehaviour
 
 		Bullet bullet = obj.GetComponent <Bullet> ();
 		bullet.shooter = transform;
+		bullet.Damage = damage;
 		bullets -= 1;
 		nextFire = Time.time + fireRate;
+		SoundManager.current.PlaySound (ShootSound);
 	}
 
 	private void Reload()
